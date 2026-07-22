@@ -34,7 +34,6 @@ TRANSLATIONS = {
         "A sanctuary of love, hope, and healing for every child who walks through our doors.":
             "Một mái ấm của tình yêu thương, hy vọng và chữa lành cho mọi em nhỏ bước qua cánh cửa của chúng tôi.",
         "Contact": "Liên hệ",
-        "123 Hope Street, District 1": "123 Đường Hy Vọng, Quận 1",
         "Facebook": "Facebook",
         "Quick Links": "Liên kết nhanh",
         "Volunteer": "Tình nguyện",
@@ -202,8 +201,8 @@ TRANSLATIONS = {
         "Within 30 days, an individualized care plan is created covering education, health, counseling, and long-term goals. Plans are reviewed quarterly.":
             "Trong vòng 30 ngày, một kế hoạch chăm sóc riêng được xây dựng bao gồm giáo dục, sức khỏe, tư vấn và các mục tiêu dài hạn. Kế hoạch được rà soát mỗi quý.",
         "For Referring Agencies": "Dành cho các Đơn vị Giới thiệu",
-        "Please contact our intake coordinator at <a href=\"mailto:tranlananh208c@gmail.com\">tranlananh208c@gmail.com</a> or call +84 (0) 28 1234 5678 ext. 2.":
-            "Vui lòng liên hệ điều phối viên tiếp nhận của chúng tôi tại <a href=\"mailto:tranlananh208c@gmail.com\">tranlananh208c@gmail.com</a> hoặc gọi +84 (0) 28 1234 5678 máy lẻ 2.",
+        "Please contact our intake coordinator at <a href=\"mailto:tranlananh208c@gmail.com\">tranlananh208c@gmail.com</a> or call 091 555 06 29.":
+            "Vui lòng liên hệ điều phối viên tiếp nhận của chúng tôi tại <a href=\"mailto:tranlananh208c@gmail.com\">tranlananh208c@gmail.com</a> hoặc gọi 091 555 06 29.",
         "Download Referral Form (PDF)": "Tải Mẫu Giới thiệu (PDF)",
 
         # ---- Shelter Rules ----
