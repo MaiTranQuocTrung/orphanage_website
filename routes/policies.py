@@ -3,24 +3,9 @@ from flask import Blueprint, render_template
 policies_bp = Blueprint("policies", __name__)
 
 
-@policies_bp.route("/charter")
-def charter():
-    return render_template("policies/charter.html")
-
-
-@policies_bp.route("/organization")
-def organization():
-    return render_template("policies/organization.html")
-
-
 @policies_bp.route("/rules")
 def rules():
     return render_template("policies/rules.html")
-
-
-@policies_bp.route("/child-rights")
-def child_rights():
-    return render_template("policies/child_rights.html")
 
 
 @policies_bp.route("/visitor")

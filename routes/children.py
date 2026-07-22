@@ -11,3 +11,8 @@ def beneficiaries():
 @children_bp.route("/intake")
 def intake():
     return render_template("children/intake.html")
+
+
+@children_bp.route("/child-rights")
+def child_rights():
+    return render_template("children/child_rights.html")
