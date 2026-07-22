@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% from "partials/page_header.html" import render as page_header %}
+
+{% block title %}{{ _("Children's Rights & Care") }}{% endblock %}
+
+{% block content %}
+{{ page_header(_("Children's Rights & Care"), _("What every child in our care is entitled to")) }}
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <p class="lead text-muted">{{ _("Children cared for at Tuệ Quang enjoy full rights to personal dignity, education, play, and healthcare in accordance with the law.") }}</p>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-heart-pulse me-2"></i>{{ _("Healthcare") }}</h3>
+                    <ul>
+                        <li>{{ _("Periodic and annual health check-ups, first aid, and treatment when ill.") }}</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-droplet me-2"></i>{{ _("Hygiene & Daily Necessities") }}</h3>
+                    <ul>
+                        <li>{{ _("Clean water and personal hygiene items, and safe, proper accommodation and meals.") }}</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-egg-fried me-2"></i>{{ _("Nutrition") }}</h3>
+                    <ul>
+                        <li>{{ _("Balanced, sufficient meals with adequate protein and nutrients, and special diets for those with particular needs such as infants or sick children.") }}</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-mortarboard me-2"></i>{{ _("Education") }}</h3>
+                    <ul>
+                        <li>{{ _("Enrollment in public or private schools in Ninh Bình Province, with full books, materials, and study support.") }}</li>
+                        <li>{{ _("Guidance in basic life-skills so children can integrate and live safely and healthily.") }}</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-dribbble me-2"></i>{{ _("Culture, Sports & Recreation") }}</h3>
+                    <ul>
+                        <li>{{ _("Learning traditional culture and taking part in age-appropriate sports, play, and recreation within the community.") }}</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-check2-square me-2"></i>{{ _("Children's Responsibilities") }}</h3>
+                    <p>{{ _("In return, every child helps keep the shelter safe and harmonious. See the") }} <a href="{{ url_for('policies.rules') }}">{{ _("Shelter Rules") }}</a> {{ _("for details.") }}</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="info-box sticky-top" style="top: 100px;">
+                    <h4>{{ _("Sponsor a Child's Care") }}</h4>
+                    <p>{{ _("Your support helps provide healthcare, nutrition, and education for every child.") }}</p>
+                    <a href="{{ url_for('support.sponsorship_registration') }}" class="btn btn-primary">{{ _("Become a Sponsor") }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

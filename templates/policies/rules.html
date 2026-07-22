@@ -10,51 +10,39 @@
     <div class="container">
         <div class="row g-5">
             <div class="col-lg-8">
-                <p class="lead text-muted">{{ _("These rules help create a structured, respectful environment where every child feels safe and valued.") }}</p>
+                <p class="lead text-muted">{{ _("Every child at Tuệ Quang follows these rules so the shelter stays safe, orderly, and harmonious for everyone.") }}</p>
 
                 <div class="policy-section">
-                    <h3><i class="bi bi-house-door me-2"></i>{{ _("Daily Life") }}</h3>
+                    <h3><i class="bi bi-house-door me-2"></i>{{ _("Daily Living") }}</h3>
                     <ul>
-                        <li>{{ _("Wake-up time is 6:30 AM on school days; lights out by 9:00 PM for younger children, 10:00 PM for teens.") }}</li>
-                        <li>{{ _("All residents participate in morning chores and maintain personal hygiene standards.") }}</li>
-                        <li>{{ _("Meals are served at scheduled times in the dining hall; no food in dormitories.") }}</li>
-                        <li>{{ _("Personal belongings must be kept tidy in assigned storage spaces.") }}</li>
+                        <li>{{ _("Keep to the shelter's schedule for daily activities, sleeping, resting, and meals.") }}</li>
+                        <li>{{ _("Maintain personal hygiene and keep bedrooms and shared areas clean.") }}</li>
+                        <li>{{ _("Take an active part in self-management and community activities.") }}</li>
                     </ul>
                 </div>
 
                 <div class="policy-section">
-                    <h3><i class="bi bi-shield-check me-2"></i>{{ _("Safety & Conduct") }}</h3>
+                    <h3><i class="bi bi-shield-check me-2"></i>{{ _("Conduct & Safety") }}</h3>
                     <ul>
-                        <li>{{ _("Physical violence, bullying, and verbal abuse are strictly prohibited.") }}</li>
-                        <li>{{ _("Children must remain on campus unless accompanied by authorized staff.") }}</li>
-                        <li>{{ _("Electronic devices are permitted during designated hours only.") }}</li>
-                        <li>{{ _("Substance use (alcohol, tobacco, drugs) is forbidden for all residents.") }}</li>
+                        <li>{{ _("Follow the shelter's rules and regulations at all times.") }}</li>
+                        <li>{{ _("Help maintain security and order in the bedrooms and throughout the shelter.") }}</li>
+                        <li>{{ _("Follow all fire-prevention and fire-fighting rules.") }}</li>
+                        <li>{{ _("Do not leave the shelter without reporting to and obtaining permission from a manager.") }}</li>
                     </ul>
                 </div>
 
                 <div class="policy-section">
-                    <h3><i class="bi bi-mortarboard me-2"></i>{{ _("Education") }}</h3>
+                    <h3><i class="bi bi-box-seam me-2"></i>{{ _("Property & Belongings") }}</h3>
                     <ul>
-                        <li>{{ _("School attendance is mandatory unless excused for medical reasons.") }}</li>
-                        <li>{{ _("Homework and study time is scheduled daily from 4:00–6:00 PM.") }}</li>
-                        <li>{{ _("Tutoring support is available for children who need extra help.") }}</li>
-                    </ul>
-                </div>
-
-                <div class="policy-section">
-                    <h3><i class="bi bi-people me-2"></i>{{ _("Community Respect") }}</h3>
-                    <ul>
-                        <li>{{ _("Respect staff, volunteers, and fellow residents at all times.") }}</li>
-                        <li>{{ _("Participate in group activities, community service, and cultural events.") }}</li>
-                        <li>{{ _("Resolve conflicts peacefully with the help of counselors when needed.") }}</li>
+                        <li>{{ _("Take care of the personal items provided to you and of the shelter's property.") }}</li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="info-box sticky-top" style="top: 100px;">
                     <h4>{{ _("Questions?") }}</h4>
-                    <p>{{ _("Residents and guardians may speak with any care staff member about these rules. Updates are posted on the community bulletin board.") }}</p>
-                    <p class="mb-0"><a href="{{ url_for('policies.visitor') }}">{{ _("View Visitor Policy") }} &rarr;</a></p>
+                    <p>{{ _("Residents and guardians may speak with any care staff member about these rules.") }}</p>
+                    <p class="mb-0"><a href="{{ url_for('children.child_rights') }}">{{ _("See Children's Rights & Care") }} &rarr;</a></p>
                 </div>
             </div>
         </div>

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% from "partials/page_header.html" import render as page_header %}
+
+{% block title %}{{ _("Operating Charter") }}{% endblock %}
+
+{% block content %}
+{{ page_header(_("Operating Charter"), _("How Tuệ Quang Shelter is established and governed")) }}
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <p class="lead text-muted">{{ _("Tuệ Quang Shelter operates as a licensed social protection facility caring for orphaned and disadvantaged children, in full accordance with Vietnamese law.") }}</p>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-bank me-2"></i>{{ _("Legal Basis") }}</h3>
+                    <ul>
+                        <li>{{ _("Established under Government Decree No. 103/2017/ND-CP on the establishment, organization, operation, dissolution, and management of social assistance establishments.") }}</li>
+                        <li>{{ _("Operating in accordance with Decree No. 20/2021/ND-CP and Decree No. 76/2024/ND-CP on social assistance policies for beneficiaries.") }}</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-info-circle me-2"></i>{{ _("About the Facility") }}</h3>
+                    <ul>
+                        <li>{{ _("<strong>Full name:</strong> Social Protection Facility for Children in Special Circumstances — Tuệ Quang Shelter.") | safe }}</li>
+                        <li>{{ _("<strong>Address:</strong> No. 157 Đặng Xuân Bảng, Hồng Quang Ward, Ninh Bình Province.") | safe }}</li>
+                        <li>{{ _("<strong>Area of operation:</strong> Ninh Bình Province.") | safe }}</li>
+                        <li>{{ _("<strong>Charter capital:</strong> VND 5,000,000,000 (five billion dong).") | safe }}</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-bullseye me-2"></i>{{ _("Our Mission & Core Tasks") }}</h3>
+                    <ul>
+                        <li>{{ _("Receive, manage, care for, and protect orphaned children and children who have lost their source of care, providing for their material and emotional wellbeing.") }}</li>
+                        <li>{{ _("Coordinate with partners to provide education, vocational training, and career orientation so children can grow physically, intellectually, and socially.") }}</li>
+                        <li>{{ _("Work with local authorities to reintegrate eligible children into the community and ensure them a stable life.") }}</li>
+                        <li>{{ _("Provide life-skills education, sports, recreation, and activities that support each child's physical and mental development.") }}</li>
+                        <li>{{ _("Partner with training institutions to build social-work capacity for staff and collaborators.") }}</li>
+                        <li>{{ _("Admit children and maintain their case files in accordance with Articles 27, 28, and 29 of Decree No. 20/2021/ND-CP.") }}</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-heart me-2"></i>{{ _("A Non-Profit Facility") }}</h3>
+                    <ul>
+                        <li>{{ _("Tuệ Quang Shelter is a charitable social organization established to serve children who have lost their source of care, and it operates on a non-profit basis.") }}</li>
+                        <li>{{ _("The shelter balances its finances each year to avoid any budget shortfall.") }}</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-diagram-3 me-2"></i>{{ _("Internal Dispute Resolution") }}</h3>
+                    <ol>
+                        <li>{{ _("<strong>Internal conciliation:</strong> The Founding Council and Director first meet to clarify and resolve the dispute in a spirit of respect and good faith, forming a mediation group if necessary.") | safe }}</li>
+                        <li>{{ _("<strong>Escalation to the authorities:</strong> If conciliation fails, the matter is reported to the competent state authority for inspection and resolution.") | safe }}</li>
+                        <li>{{ _("<strong>Legal resolution:</strong> If it remains unresolved, the parties may bring the case before the People's Court.") | safe }}</li>
+                    </ol>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-file-earmark-text me-2"></i>{{ _("Capital Transfer, Dissolution & Amendments") }}</h3>
+                    <ul>
+                        <li>{{ _("<strong>Capital transfer:</strong> A founding member wishing to transfer their contribution must reach agreement with the Founding Council, submit the transfer for approval by the competent authority, and update the operating license accordingly.") | safe }}</li>
+                        <li>{{ _("<strong>Dissolution:</strong> The Founding Council may dissolve the facility by following the legally required steps, while fulfilling all obligations to the children, staff, and partners involved.") | safe }}</li>
+                        <li>{{ _("<strong>Amendments:</strong> This charter may be amended by agreement of the founding members and with the approval of the competent state authority.") | safe }}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="info-box sticky-top" style="top: 100px;">
+                    <h4>{{ _("Governing Document") }}</h4>
+                    <p>{{ _("This page summarizes the shelter's operating charter (draft, October 2025). For the full document, please contact the shelter office.") }}</p>
+                    <p class="mb-0"><a href="{{ url_for('about.organization') }}">{{ _("See Organization & Staffing") }} &rarr;</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
