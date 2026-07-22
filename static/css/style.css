@@ -648,6 +648,20 @@ a:hover {
     margin-bottom: 1rem;
 }
 
+.site-footer .footer-tagline {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.contact-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.35rem;
+}
+
+.contact-list li i {
+    flex-shrink: 0;
+}
+
 .site-footer a {
     color: rgba(255, 255, 255, 0.75);
 }
