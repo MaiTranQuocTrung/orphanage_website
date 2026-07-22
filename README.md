@@ -32,6 +32,30 @@ python app.py
 
 Open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 
+## Email Notifications
+
+The Volunteer and Sponsorship forms email the submitted details to the shelter
+(`tranlananh208c@gmail.com` by default). SMTP credentials are read from
+environment variables so no secrets are stored in the repo. If they are not set,
+the site still works and the submission is logged to the console instead.
+
+| Variable | Example | Notes |
+|----------|---------|-------|
+| `MAIL_SERVER` | `smtp.gmail.com` | Required to send |
+| `MAIL_PORT` | `587` | Defaults to `587` |
+| `MAIL_USE_TLS` | `1` | Defaults to on |
+| `MAIL_USERNAME` | `you@gmail.com` | Required to send |
+| `MAIL_PASSWORD` | `app-password` | Gmail requires an [App Password](https://support.google.com/accounts/answer/185833) |
+| `MAIL_SENDER` | `you@gmail.com` | Optional, defaults to `MAIL_USERNAME` |
+| `MAIL_RECIPIENT` | `tranlananh208c@gmail.com` | Optional, this is the default |
+
+Example (PowerShell):
+
+```powershell
+$env:MAIL_SERVER="smtp.gmail.com"; $env:MAIL_USERNAME="you@gmail.com"; $env:MAIL_PASSWORD="your-app-password"
+python app.py
+```
+
 ## Pages
 
 | Section | Routes |
@@ -46,5 +70,5 @@ Open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 ## Notes
 
 - Stock images are loaded from Unsplash CDN.
-- Registration forms show a confirmation flash message (no backend persistence yet).
+- Registration forms email submissions to the shelter and show a confirmation flash message.
 - Founding Council photos open a modal with member profiles on click.
