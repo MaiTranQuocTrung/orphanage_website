@@ -464,6 +464,18 @@ a:hover {
     font-weight: 600;
 }
 
+/* Carousel */
+.carousel-photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: var(--color-cream);
+}
+
+.carousel-inner {
+    overflow: hidden;
+}
+
 /* Gallery */
 .gallery-img {
     width: 100%;

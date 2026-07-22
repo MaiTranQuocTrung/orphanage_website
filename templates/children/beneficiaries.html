@@ -22,27 +22,40 @@
                 </ul>
             </div>
             <div class="col-lg-6">
-                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&q=80" alt="Children supported by the shelter" class="img-fluid rounded-4 shadow">
+                <div id="beneficiaryCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#beneficiaryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#beneficiaryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#beneficiaryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner rounded-4 shadow">
+                        <div class="carousel-item active">
+                            <img src="{{ url_for('static', filename='img/beneficiary1.png') }}" class="d-block w-100 carousel-photo" alt="Beneficiary image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='img/beneficiary2.png') }}" class="d-block w-100 carousel-photo" alt="Beneficiary image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='img/beneficiary3.png') }}" class="d-block w-100 carousel-photo" alt="Beneficiary image 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#beneficiaryCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#beneficiaryCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
         </div>
 
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="stat-card">
-                    <div class="stat-number">80+</div>
-                    <div class="stat-label">{{ _("Children Currently Served") }}</div>
-                </div>
-            </div>
+        <div class="row g-4 justify-content-center">
             <div class="col-md-4">
                 <div class="stat-card">
                     <div class="stat-number">5–18</div>
                     <div class="stat-label">{{ _("Age Range") }}</div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="stat-card">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">{{ _("Lives Transformed Since 2008") }}</div>
                 </div>
             </div>
         </div>
