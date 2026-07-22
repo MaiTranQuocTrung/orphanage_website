@@ -71,21 +71,23 @@ TRANSLATIONS = {
 
         # ---- History ----
         "Our Beginning": "Khởi đầu của chúng tôi",
-        "Tuệ Quang Children was founded in 2008 by a group of educators, social workers, and community leaders who witnessed the growing need for safe housing and holistic care for abandoned and at-risk children in the region.":
-            "Mái Ấm Tuệ Quang được thành lập năm 2008 bởi một nhóm nhà giáo, nhân viên công tác xã hội và những người dẫn dắt cộng đồng, những người đã chứng kiến nhu cầu ngày càng lớn về nơi ở an toàn và sự chăm sóc toàn diện cho trẻ em bị bỏ rơi và có hoàn cảnh khó khăn trong khu vực.",
-        "What began as a small home for twelve children has grown into a comprehensive shelter serving over 80 young lives. Our founders believed that shelter alone was not enough — children need education, emotional healing, and a community that believes in their future.":
-            "Khởi đầu là một mái nhà nhỏ cho mười hai em, nay đã phát triển thành một mái ấm toàn diện chăm sóc hơn 80 cuộc đời non trẻ. Những người sáng lập tin rằng chỉ có nơi trú ẩn thôi là chưa đủ — các em cần giáo dục, chữa lành cảm xúc và một cộng đồng tin tưởng vào tương lai của mình.",
+        "After more than eight years of regularly visiting Vietnam to connect with people and share the Buddhist Dharma, in 2022 Dorzin Dhondrup Rinpoche felt a strong wish to establish a shelter in Vietnam to raise orphaned and abandoned children who have nowhere to turn. He presented this aspiration to his root teacher, Garchen Rinpoche, who acknowledged and blessed it.":
+            "Sau hơn 8 năm thường xuyên đến Việt Nam để thăm hỏi, kết nối và chia sẻ Phật Pháp, năm 2022 Dorzin Dhondrup Rinpoche mong muốn mạnh mẽ thành lập một mái ấm tại Việt Nam để nuôi dưỡng trẻ mồ côi, trẻ bị bỏ rơi không nơi nương tựa. Tâm nguyện này đã được Thầy báo cáo tới bổn sư Garchen Rinpoche và được Ngài chứng minh, gia trì.",
+        "After two years of preparation, in December 2024 he met three members of the Drikung Garchen Hanoi community (DGPC) who wholeheartedly offered to help him found and grow the shelter.":
+            "Trải qua hai năm tìm hiểu, đến tháng 12/2024 Thầy đã gặp được ba thành viên đạo tràng Drikung Garchen Hà Nội (DGPC) phát tâm sẵn sàng đồng hành cùng Thầy thành lập và phát triển Mái ấm.",
+        "“Tuệ Quang”, the name given by Dorzin Dhondrup Rinpoche, means “the light of wisdom” — expressing the wish that, despite the hardships of their birth, under the light of wisdom and love these children will be nurtured to become happy and good-hearted citizens.":
+            "“Tuệ Quang” là tên mà Dorzin Dhondrup Rinpoche đã đặt cho mái ấm, có nghĩa là trí tuệ chiếu sáng, với mong nguyện rằng mặc dù có thiệt thòi về hoàn cảnh sinh ra, nhưng dưới ánh sáng của trí tuệ và tình yêu thương, các em sẽ được nuôi dưỡng và phát triển để trở thành những công dân hạnh phúc và thiện lương.",
         "Key Milestones": "Những cột mốc quan trọng",
-        "<strong>2008</strong> — First shelter opened with 12 children":
-            "<strong>2008</strong> — Mái ấm đầu tiên mở cửa với 12 em nhỏ",
-        "<strong>2012</strong> — Education center and tutoring program launched":
-            "<strong>2012</strong> — Ra mắt trung tâm giáo dục và chương trình gia sư",
-        "<strong>2016</strong> — Expanded to current campus with dormitories and play areas":
-            "<strong>2016</strong> — Mở rộng sang cơ sở hiện tại với khu ký túc xá và sân chơi",
-        "<strong>2020</strong> — Mental health and counseling services introduced":
-            "<strong>2020</strong> — Triển khai dịch vụ chăm sóc sức khỏe tinh thần và tư vấn",
-        "<strong>2024</strong> — Alumni mentorship program established":
-            "<strong>2024</strong> — Thành lập chương trình cố vấn cựu thành viên",
+        "<strong>Nov 4, 2025</strong> — Tuệ Quang Shelter officially receives its establishment registration certificate from the Ninh Bình Province People's Committee":
+            "<strong>04/11/2025</strong> — Mái Ấm Tuệ Quang chính thức được UBND tỉnh Ninh Bình cấp giấy chứng nhận đăng ký thành lập",
+        "<strong>Mar 2026</strong> — The first staff member, in charge of administration and accounting, joins the shelter":
+            "<strong>03/2026</strong> — Nhân sự đầu tiên phụ trách hành chính – kế toán gia nhập Mái Ấm",
+        "<strong>May 2026</strong> — The house of love is completed and ready to welcome children":
+            "<strong>05/2026</strong> — Hoàn thành ngôi nhà tình thương, sẵn sàng đón trẻ",
+        "<strong>Jun 2026</strong> — Labor contracts are signed with childcare, catering, and security staff":
+            "<strong>06/2026</strong> — Ký hợp đồng lao động với nhân sự chăm nuôi trẻ, cấp dưỡng và bảo vệ",
+        "<strong>Jul 2026</strong> — A social work staff member joins the shelter":
+            "<strong>07/2026</strong> — Nhân sự phụ trách công tác xã hội gia nhập Mái Ấm",
         "Formation Principles": "Nguyên tắc hình thành",
         "Built on Buddhist values of compassion (<em>từ bi</em>) and wisdom (<em>tuệ</em>), our name reflects our commitment to enlightened care for every child.":
             "Được xây dựng trên các giá trị Phật giáo về lòng <em>từ bi</em> và trí <em>tuệ</em>, tên gọi của chúng tôi thể hiện cam kết chăm sóc bằng sự giác ngộ cho mọi em nhỏ.",
