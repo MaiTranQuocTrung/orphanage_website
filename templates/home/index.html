@@ -3,15 +3,8 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<section class="hero-section">
-    <div class="hero-image" style="background-image: url('https://images.unsplash.com/photo-1488521787591-d7eba9b9a1fe?w=1600&q=80');"></div>
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-        <blockquote class="hero-quote">
-            <p>&ldquo;Every child deserves a place where they are seen, heard, and loved unconditionally.&rdquo;</p>
-            <footer>&mdash; Tuệ Quang Children Shelter</footer>
-        </blockquote>
-    </div>
+<section class="hero-section hero-banner">
+    <img src="{{ url_for('static', filename='img/banner.png') }}" alt="Mái Ấm Tuệ Quang — Yêu Thương, Trách nhiệm, Thấu hiểu" class="hero-banner-image">
 </section>
 
 <section class="section-padding">
@@ -26,54 +19,6 @@
                 <p class="lead text-muted">Tuệ Quang Children provides safe shelter, education, and emotional support for vulnerable children. We believe every young life holds infinite potential waiting to bloom.</p>
                 <a href="{{ url_for('about.history') }}" class="btn btn-primary btn-lg mt-2">Learn Our Story</a>
             </div>
-        </div>
-    </div>
-</section>
-
-<section class="section-padding bg-cream">
-    <div class="container">
-        <div class="text-center mb-5">
-            <span class="section-label">Latest</span>
-            <h2 class="section-title">Events & Stories</h2>
-            <p class="text-muted">Stay connected with our community activities and inspiring stories.</p>
-        </div>
-
-        <div class="row g-4 mb-5">
-            <div class="col-12">
-                <h3 class="h5 text-uppercase tracking-wide mb-4"><i class="bi bi-calendar-event me-2"></i>Upcoming Events</h3>
-            </div>
-            {% for event in recent_events %}
-            <div class="col-md-4">
-                <article class="card card-hover h-100">
-                    <img src="{{ event.image }}" class="card-img-top" alt="{{ event.title }}">
-                    <div class="card-body">
-                        <span class="badge bg-primary-subtle text-primary mb-2">{{ event.date }}</span>
-                        <h4 class="card-title h5">{{ event.title }}</h4>
-                        <p class="card-text text-muted">{{ event.summary }}</p>
-                        <a href="{{ url_for('events.events_list') }}" class="stretched-link">View all events</a>
-                    </div>
-                </article>
-            </div>
-            {% endfor %}
-        </div>
-
-        <div class="row g-4">
-            <div class="col-12">
-                <h3 class="h5 text-uppercase tracking-wide mb-4"><i class="bi bi-heart me-2"></i>Stories of Love</h3>
-            </div>
-            {% for story in recent_stories %}
-            <div class="col-md-4">
-                <article class="card card-hover h-100">
-                    <img src="{{ story.image }}" class="card-img-top" alt="{{ story.title }}">
-                    <div class="card-body">
-                        <span class="badge bg-secondary-subtle text-secondary mb-2">{{ story.date }}</span>
-                        <h4 class="card-title h5">{{ story.title }}</h4>
-                        <p class="card-text text-muted">{{ story.excerpt }}</p>
-                        <a href="{{ url_for('events.stories') }}" class="stretched-link">Read more stories</a>
-                    </div>
-                </article>
-            </div>
-            {% endfor %}
         </div>
     </div>
 </section>

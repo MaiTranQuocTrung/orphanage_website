@@ -48,16 +48,13 @@ a:hover {
 .navbar-brand {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-family: var(--font-serif);
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: var(--color-primary-dark) !important;
+    padding: 0;
 }
 
-.brand-icon {
-    color: var(--color-accent);
-    font-size: 1.2rem;
+.site-logo {
+    height: 56px;
+    width: auto;
+    display: block;
 }
 
 .nav-link {
@@ -88,13 +85,23 @@ a:hover {
     color: var(--color-primary);
 }
 
-/* Hero */
+/* Hero / Banner */
 .hero-section {
     position: relative;
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
     overflow: hidden;
+}
+
+.hero-banner {
+    background: #fff;
+}
+
+.hero-banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 420px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .hero-image {
@@ -445,6 +452,18 @@ a:hover {
     font-family: var(--font-serif);
 }
 
+/* Gallery */
+.gallery-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.02);
+}
+
 /* Timeline */
 .timeline {
     list-style: none;
@@ -621,6 +640,10 @@ a:hover {
     color: rgba(255, 255, 255, 0.75);
 }
 
+.site-footer .text-muted a {
+    color: rgba(255, 255, 255, 0.75);
+}
+
 .site-footer a:hover {
     color: #fff;
 }
@@ -641,6 +664,14 @@ a:hover {
 @media (max-width: 768px) {
     .section-padding {
         padding: 3rem 0;
+    }
+
+    .hero-banner-image {
+        max-height: 280px;
+    }
+
+    .site-logo {
+        height: 44px;
     }
 
     .hero-section {
