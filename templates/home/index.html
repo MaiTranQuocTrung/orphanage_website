@@ -3,15 +3,8 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<section class="hero-section">
-    <div class="hero-image" style="background-image: url('https://images.unsplash.com/photo-1488521787591-d7eba9b9a1fe?w=1600&q=80');"></div>
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-        <blockquote class="hero-quote">
-            <p>&ldquo;Every child deserves a place where they are seen, heard, and loved unconditionally.&rdquo;</p>
-            <footer>&mdash; Tuệ Quang Children Shelter</footer>
-        </blockquote>
-    </div>
+<section class="hero-section hero-banner">
+    <img src="{{ url_for('static', filename='img/banner.png') }}" alt="Mái Ấm Tuệ Quang — Yêu Thương, Trách nhiệm, Thấu hiểu" class="hero-banner-image">
 </section>
 
 <section class="section-padding">
