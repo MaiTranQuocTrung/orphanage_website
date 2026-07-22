@@ -452,6 +452,18 @@ a:hover {
     font-family: var(--font-serif);
 }
 
+/* Language switcher */
+.language-switcher .nav-link {
+    display: flex;
+    align-items: center;
+}
+
+.language-switcher .dropdown-item.active {
+    background: var(--color-cream);
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
 /* Gallery */
 .gallery-img {
     width: 100%;

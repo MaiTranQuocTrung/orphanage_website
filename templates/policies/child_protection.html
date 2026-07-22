@@ -1,62 +1,62 @@
 {% extends "base.html" %}
 {% from "partials/page_header.html" import render as page_header %}
 
-{% block title %}Child Protection Policy{% endblock %}
+{% block title %}{{ _("Child Protection Policy") }}{% endblock %}
 
 {% block content %}
-{{ page_header("Child Protection Policy", "Safeguarding every child in our care") }}
+{{ page_header(_("Child Protection Policy"), _("Safeguarding every child in our care")) }}
 
 <section class="section-padding">
     <div class="container">
         <div class="alert alert-warning border-0 mb-5">
             <i class="bi bi-exclamation-triangle me-2"></i>
-            <strong>Zero Tolerance:</strong> Tuệ Quang Children has zero tolerance for any form of abuse, neglect, or exploitation of children.
+            {{ _("<strong>Zero Tolerance:</strong> Tuệ Quang Children has zero tolerance for any form of abuse, neglect, or exploitation of children.") | safe }}
         </div>
 
         <div class="row g-5">
             <div class="col-lg-8">
                 <div class="policy-section">
-                    <h3>Our Commitment</h3>
-                    <p>We are committed to creating and maintaining a safe environment where children are protected from physical, emotional, and sexual harm. This policy applies to all staff, volunteers, contractors, and visitors.</p>
+                    <h3>{{ _("Our Commitment") }}</h3>
+                    <p>{{ _("We are committed to creating and maintaining a safe environment where children are protected from physical, emotional, and sexual harm. This policy applies to all staff, volunteers, contractors, and visitors.") }}</p>
                 </div>
 
                 <div class="policy-section">
-                    <h3>Prevention Measures</h3>
+                    <h3>{{ _("Prevention Measures") }}</h3>
                     <ul>
-                        <li>Mandatory child protection training for all staff and volunteers.</li>
-                        <li>Comprehensive background checks before any individual works with children.</li>
-                        <li>Two-adult rule: no adult is ever alone with a child unsupervised.</li>
-                        <li>Secure facilities with controlled access and surveillance in common areas.</li>
-                        <li>Regular safety audits and policy reviews conducted annually.</li>
+                        <li>{{ _("Mandatory child protection training for all staff and volunteers.") }}</li>
+                        <li>{{ _("Comprehensive background checks before any individual works with children.") }}</li>
+                        <li>{{ _("Two-adult rule: no adult is ever alone with a child unsupervised.") }}</li>
+                        <li>{{ _("Secure facilities with controlled access and surveillance in common areas.") }}</li>
+                        <li>{{ _("Regular safety audits and policy reviews conducted annually.") }}</li>
                     </ul>
                 </div>
 
                 <div class="policy-section">
-                    <h3>Reporting Procedure</h3>
+                    <h3>{{ _("Reporting Procedure") }}</h3>
                     <ol>
-                        <li>Any suspicion or disclosure of abuse must be reported immediately to the Child Protection Officer.</li>
-                        <li>The Officer will document the report and initiate an investigation within 24 hours.</li>
-                        <li>Serious cases are reported to local authorities and child welfare agencies as required by law.</li>
-                        <li>Whistleblower protections are in place for anyone reporting in good faith.</li>
+                        <li>{{ _("Any suspicion or disclosure of abuse must be reported immediately to the Child Protection Officer.") }}</li>
+                        <li>{{ _("The Officer will document the report and initiate an investigation within 24 hours.") }}</li>
+                        <li>{{ _("Serious cases are reported to local authorities and child welfare agencies as required by law.") }}</li>
+                        <li>{{ _("Whistleblower protections are in place for anyone reporting in good faith.") }}</li>
                     </ol>
                 </div>
 
                 <div class="policy-section">
-                    <h3>Support for Children</h3>
+                    <h3>{{ _("Support for Children") }}</h3>
                     <ul>
-                        <li>Trauma-informed counseling available for all affected children.</li>
-                        <li>Children are informed of their rights and how to seek help.</li>
-                        <li>Age-appropriate safety education provided regularly.</li>
+                        <li>{{ _("Trauma-informed counseling available for all affected children.") }}</li>
+                        <li>{{ _("Children are informed of their rights and how to seek help.") }}</li>
+                        <li>{{ _("Age-appropriate safety education provided regularly.") }}</li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="info-box border-danger">
-                    <h4>Report a Concern</h4>
-                    <p>If you have concerns about a child's safety, contact our Child Protection Officer immediately:</p>
+                    <h4>{{ _("Report a Concern") }}</h4>
+                    <p>{{ _("If you have concerns about a child's safety, contact our Child Protection Officer immediately:") }}</p>
                     <p><i class="bi bi-telephone me-2"></i>+84 (0) 28 1234 5678 ext. 9</p>
                     <p><i class="bi bi-envelope me-2"></i><a href="mailto:tranlananh208c@gmail.com">tranlananh208c@gmail.com</a></p>
-                    <p class="mb-0 text-muted small">Available 24/7 for urgent matters.</p>
+                    <p class="mb-0 text-muted small">{{ _("Available 24/7 for urgent matters.") }}</p>
                 </div>
             </div>
         </div>
