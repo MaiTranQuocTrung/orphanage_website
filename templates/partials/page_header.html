@@ -1,0 +1,10 @@
+{% macro render(title, subtitle=None) %}
+<section class="page-header">
+    <div class="container">
+        <h1>{{ title }}</h1>
+        {% if subtitle %}
+        <p class="lead">{{ subtitle }}</p>
+        {% endif %}
+    </div>
+</section>
+{% endmacro %}
