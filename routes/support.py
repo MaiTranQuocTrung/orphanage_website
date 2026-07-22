@@ -15,7 +15,8 @@ SPONSORSHIP_REQUIRED_FIELDS = (
     "sponsor_name",
     "email",
     "phone",
-    "sponsorship_level",
+    "amount",
+    "currency",
     "frequency",
 )
 
