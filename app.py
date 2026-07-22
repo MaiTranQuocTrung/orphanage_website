@@ -1,6 +1,13 @@
 from flask import Flask
 from flask_wtf.csrf import CSRFProtect
 
+try:
+    from dotenv import load_dotenv
+
+    load_dotenv()
+except ImportError:
+    pass
+
 import i18n
 from routes import register_blueprints
 
