@@ -4,12 +4,14 @@ from .about import about_bp
 from .children import children_bp
 from .events import events_bp
 from .home import home_bp
+from .language import language_bp
 from .policies import policies_bp
 from .support import support_bp
 
 
 def register_blueprints(app: Flask) -> None:
     app.register_blueprint(home_bp)
+    app.register_blueprint(language_bp)
     app.register_blueprint(about_bp, url_prefix="/about")
     app.register_blueprint(children_bp, url_prefix="/children")
     app.register_blueprint(policies_bp, url_prefix="/policies")

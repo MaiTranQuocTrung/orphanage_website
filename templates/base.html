@@ -24,45 +24,57 @@
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.endpoint == 'home.index' %}active{% endif %}" href="{{ url_for('home.index') }}">Home</a>
+                        <a class="nav-link {% if request.endpoint == 'home.index' %}active{% endif %}" href="{{ url_for('home.index') }}">{{ _("Home") }}</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {% if request.endpoint and request.endpoint.startswith('about.') %}active{% endif %}" href="#" data-bs-toggle="dropdown">About Us</a>
+                        <a class="nav-link dropdown-toggle {% if request.endpoint and request.endpoint.startswith('about.') %}active{% endif %}" href="#" data-bs-toggle="dropdown">{{ _("About Us") }}</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url_for('about.history') }}">History / Formation</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('about.vision') }}">Vision & Values</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('about.council') }}">Founding Council</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('about.org_chart') }}">Organizational Chart</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('about.history') }}">{{ _("History / Formation") }}</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('about.vision') }}">{{ _("Vision & Values") }}</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('about.council') }}">{{ _("Founding Council") }}</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('about.org_chart') }}">{{ _("Organizational Chart") }}</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {% if request.endpoint and request.endpoint.startswith('children.') %}active{% endif %}" href="#" data-bs-toggle="dropdown">Tuệ Quang Children</a>
+                        <a class="nav-link dropdown-toggle {% if request.endpoint and request.endpoint.startswith('children.') %}active{% endif %}" href="#" data-bs-toggle="dropdown">{{ _("Tuệ Quang Children") }}</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url_for('children.beneficiaries') }}">Beneficiaries</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('children.intake') }}">Intake Process</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('children.beneficiaries') }}">{{ _("Beneficiaries") }}</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('children.intake') }}">{{ _("Intake Process") }}</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {% if request.endpoint and request.endpoint.startswith('policies.') %}active{% endif %}" href="#" data-bs-toggle="dropdown">Shelter Policies</a>
+                        <a class="nav-link dropdown-toggle {% if request.endpoint and request.endpoint.startswith('policies.') %}active{% endif %}" href="#" data-bs-toggle="dropdown">{{ _("Shelter Policies") }}</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url_for('policies.rules') }}">Shelter Rules</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('policies.visitor') }}">Visitor Policy</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('policies.volunteer') }}">Volunteer Policy</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('policies.child_protection') }}">Child Protection Policy</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('policies.rules') }}">{{ _("Shelter Rules") }}</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('policies.visitor') }}">{{ _("Visitor Policy") }}</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('policies.volunteer') }}">{{ _("Volunteer Policy") }}</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('policies.child_protection') }}">{{ _("Child Protection Policy") }}</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {% if request.endpoint and request.endpoint.startswith('events.') %}active{% endif %}" href="#" data-bs-toggle="dropdown">Events & Stories</a>
+                        <a class="nav-link dropdown-toggle {% if request.endpoint and request.endpoint.startswith('events.') %}active{% endif %}" href="#" data-bs-toggle="dropdown">{{ _("Events & Stories") }}</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url_for('events.events_list') }}">Events</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('events.stories') }}">Stories of Love</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('events.events_list') }}">{{ _("Events") }}</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('events.stories') }}">{{ _("Stories of Love") }}</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {% if request.endpoint and request.endpoint.startswith('support.') %}active{% endif %}" href="#" data-bs-toggle="dropdown">Support the Shelter</a>
+                        <a class="nav-link dropdown-toggle {% if request.endpoint and request.endpoint.startswith('support.') %}active{% endif %}" href="#" data-bs-toggle="dropdown">{{ _("Support the Shelter") }}</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url_for('support.volunteer_registration') }}">Volunteer Registration</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('support.sponsorship_registration') }}">Sponsorship Registration</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('support.volunteer_registration') }}">{{ _("Volunteer Registration") }}</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('support.sponsorship_registration') }}">{{ _("Sponsorship Registration") }}</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown language-switcher">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            <i class="bi bi-translate me-1"></i>{{ languages[current_lang] }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            {% for code, label in languages.items() %}
+                            <li>
+                                <a class="dropdown-item {% if code == current_lang %}active{% endif %}" href="{{ url_for('language.set_language', lang=code) }}">{{ label }}</a>
+                            </li>
+                            {% endfor %}
                         </ul>
                     </li>
                 </ul>
@@ -75,7 +87,7 @@
             <div class="container mt-3">
                 {% for category, message in messages %}
                     <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-                        {{ message }}
+                        {{ _(message) }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                     </div>
                 {% endfor %}
@@ -91,29 +103,29 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-4">
-                    <h5>Tuệ Quang Children</h5>
-                    <p class="text-muted">A sanctuary of love, hope, and healing for every child who walks through our doors.</p>
+                    <h5>Mái Ấm Tuệ Quang</h5>
+                    <p class="text-muted">{{ _("A sanctuary of love, hope, and healing for every child who walks through our doors.") }}</p>
                 </div>
                 <div class="col-md-4">
-                    <h5>Contact</h5>
+                    <h5>{{ _("Contact") }}</h5>
                     <ul class="list-unstyled text-muted">
-                        <li><i class="bi bi-geo-alt me-2"></i>123 Hope Street, District 1</li>
+                        <li><i class="bi bi-geo-alt me-2"></i>{{ _("123 Hope Street, District 1") }}</li>
                         <li><i class="bi bi-telephone me-2"></i>+84 (0) 28 1234 5678</li>
                         <li><i class="bi bi-envelope me-2"></i><a href="mailto:tranlananh208c@gmail.com">tranlananh208c@gmail.com</a></li>
-                        <li><i class="bi bi-facebook me-2"></i><a href="https://www.facebook.com/maiamtuequang" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                        <li><i class="bi bi-facebook me-2"></i><a href="https://www.facebook.com/maiamtuequang" target="_blank" rel="noopener noreferrer">{{ _("Facebook") }}</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h5>Quick Links</h5>
+                    <h5>{{ _("Quick Links") }}</h5>
                     <ul class="list-unstyled">
-                        <li><a href="{{ url_for('support.volunteer_registration') }}">Volunteer</a></li>
-                        <li><a href="{{ url_for('support.sponsorship_registration') }}">Sponsor a Child</a></li>
-                        <li><a href="{{ url_for('events.events_list') }}">Upcoming Events</a></li>
+                        <li><a href="{{ url_for('support.volunteer_registration') }}">{{ _("Volunteer") }}</a></li>
+                        <li><a href="{{ url_for('support.sponsorship_registration') }}">{{ _("Sponsor a Child") }}</a></li>
+                        <li><a href="{{ url_for('events.events_list') }}">{{ _("Upcoming Events") }}</a></li>
                     </ul>
                 </div>
             </div>
             <hr>
-            <p class="text-center text-muted mb-0">&copy; 2026 Tuệ Quang Children. All rights reserved.</p>
+            <p class="text-center text-muted mb-0">{{ _("© 2026 Tuệ Quang Children. All rights reserved.") }}</p>
         </div>
     </footer>
 

@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% from "partials/page_header.html" import render as page_header %}
 
-{% block title %}Sponsorship Registration{% endblock %}
+{% block title %}{{ _("Sponsorship Registration") }}{% endblock %}
 
 {% block content %}
-{{ page_header("Sponsorship Registration", "Change a child's life through sponsorship") }}
+{{ page_header(_("Sponsorship Registration"), _("Change a child's life through sponsorship")) }}
 
 <section class="section-padding">
     <div class="container">
@@ -12,11 +12,11 @@
             <div class="col-lg-5">
                 <img src="https://images.unsplash.com/photo-1503676260728-1c00da280a25?w=800&q=80" alt="Sponsored child studying" class="img-fluid rounded-4 shadow mb-4">
                 <div class="info-box">
-                    <h4>Sponsorship Levels</h4>
+                    <h4>{{ _("Sponsorship Levels") }}</h4>
                     <ul class="sponsorship-levels mb-0">
-                        <li><strong>Friend ($25/mo)</strong> — School supplies & activities</li>
-                        <li><strong>Guardian ($50/mo)</strong> — Education & healthcare</li>
-                        <li><strong>Champion ($100/mo)</strong> — Full comprehensive care</li>
+                        <li>{{ _("<strong>Friend ($25/mo)</strong> — School supplies & activities") | safe }}</li>
+                        <li>{{ _("<strong>Guardian ($50/mo)</strong> — Education & healthcare") | safe }}</li>
+                        <li>{{ _("<strong>Champion ($100/mo)</strong> — Full comprehensive care") | safe }}</li>
                     </ul>
                 </div>
             </div>
@@ -25,63 +25,63 @@
                     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <label for="sponsor_name" class="form-label">Full Name *</label>
+                            <label for="sponsor_name" class="form-label">{{ _("Full Name *") }}</label>
                             <input type="text" class="form-control" id="sponsor_name" name="sponsor_name" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="organization" class="form-label">Organization (optional)</label>
+                            <label for="organization" class="form-label">{{ _("Organization (optional)") }}</label>
                             <input type="text" class="form-control" id="organization" name="organization">
                         </div>
                         <div class="col-md-6">
-                            <label for="email" class="form-label">Email *</label>
+                            <label for="email" class="form-label">{{ _("Email *") }}</label>
                             <input type="email" class="form-control" id="email" name="email" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="phone" class="form-label">Phone *</label>
+                            <label for="phone" class="form-label">{{ _("Phone *") }}</label>
                             <input type="tel" class="form-control" id="phone" name="phone" required>
                         </div>
                         <div class="col-12">
-                            <label for="sponsorship_level" class="form-label">Sponsorship Level *</label>
+                            <label for="sponsorship_level" class="form-label">{{ _("Sponsorship Level *") }}</label>
                             <select class="form-select" id="sponsorship_level" name="sponsorship_level" required>
-                                <option value="">Select a level...</option>
-                                <option value="friend">Friend — $25/month</option>
-                                <option value="guardian">Guardian — $50/month</option>
-                                <option value="champion">Champion — $100/month</option>
-                                <option value="custom">Custom Amount</option>
+                                <option value="">{{ _("Select a level...") }}</option>
+                                <option value="friend">{{ _("Friend — $25/month") }}</option>
+                                <option value="guardian">{{ _("Guardian — $50/month") }}</option>
+                                <option value="champion">{{ _("Champion — $100/month") }}</option>
+                                <option value="custom">{{ _("Custom Amount") }}</option>
                             </select>
                         </div>
                         <div class="col-md-6">
-                            <label for="frequency" class="form-label">Payment Frequency *</label>
+                            <label for="frequency" class="form-label">{{ _("Payment Frequency *") }}</label>
                             <select class="form-select" id="frequency" name="frequency" required>
-                                <option value="monthly">Monthly</option>
-                                <option value="quarterly">Quarterly</option>
-                                <option value="annually">Annually</option>
-                                <option value="one-time">One-time Donation</option>
+                                <option value="monthly">{{ _("Monthly") }}</option>
+                                <option value="quarterly">{{ _("Quarterly") }}</option>
+                                <option value="annually">{{ _("Annually") }}</option>
+                                <option value="one-time">{{ _("One-time Donation") }}</option>
                             </select>
                         </div>
                         <div class="col-md-6">
-                            <label for="preference" class="form-label">Child Preference</label>
+                            <label for="preference" class="form-label">{{ _("Child Preference") }}</label>
                             <select class="form-select" id="preference" name="preference">
-                                <option value="general">General fund (greatest need)</option>
-                                <option value="education">Education support</option>
-                                <option value="healthcare">Healthcare support</option>
-                                <option value="specific">Specific child (we will contact you)</option>
+                                <option value="general">{{ _("General fund (greatest need)") }}</option>
+                                <option value="education">{{ _("Education support") }}</option>
+                                <option value="healthcare">{{ _("Healthcare support") }}</option>
+                                <option value="specific">{{ _("Specific child (we will contact you)") }}</option>
                             </select>
                         </div>
                         <div class="col-12">
-                            <label for="message" class="form-label">Message (optional)</label>
-                            <textarea class="form-control" id="message" name="message" rows="3" placeholder="Share why you'd like to sponsor..."></textarea>
+                            <label for="message" class="form-label">{{ _("Message (optional)") }}</label>
+                            <textarea class="form-control" id="message" name="message" rows="3" placeholder="{{ _('Share why you\'d like to sponsor...') }}"></textarea>
                         </div>
                         <div class="col-12">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="agree_terms" name="agree_terms" required>
                                 <label class="form-check-label" for="agree_terms">
-                                    I understand this is an expression of interest. Our team will contact me to finalize sponsorship details.
+                                    {{ _("I understand this is an expression of interest. Our team will contact me to finalize sponsorship details.") }}
                                 </label>
                             </div>
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary btn-lg">Submit Sponsorship Interest</button>
+                            <button type="submit" class="btn btn-primary btn-lg">{{ _("Submit Sponsorship Interest") }}</button>
                         </div>
                     </div>
                 </form>

@@ -1,24 +1,24 @@
 {% extends "base.html" %}
 {% from "partials/page_header.html" import render as page_header %}
 
-{% block title %}Beneficiaries{% endblock %}
+{% block title %}{{ _("Beneficiaries") }}{% endblock %}
 
 {% block content %}
-{{ page_header("Beneficiaries", "Who we help and how we serve") }}
+{{ page_header(_("Beneficiaries"), _("Who we help and how we serve")) }}
 
 <section class="section-padding">
     <div class="container">
         <div class="row g-5 align-items-center mb-5">
             <div class="col-lg-6">
-                <span class="section-label">Who We Help</span>
-                <h2 class="section-title">Children Who Need Us Most</h2>
-                <p>Tuệ Quang Children serves vulnerable young people who lack stable family support. Our beneficiaries include:</p>
+                <span class="section-label">{{ _("Who We Help") }}</span>
+                <h2 class="section-title">{{ _("Children Who Need Us Most") }}</h2>
+                <p>{{ _("Tuệ Quang Children serves vulnerable young people who lack stable family support. Our beneficiaries include:") }}</p>
                 <ul class="check-list">
-                    <li>Orphaned or abandoned children</li>
-                    <li>Children from families unable to provide basic care</li>
-                    <li>At-risk youth referred by social services</li>
-                    <li>Children recovering from abuse or neglect</li>
-                    <li>Young people awaiting foster or adoptive placement</li>
+                    <li>{{ _("Orphaned or abandoned children") }}</li>
+                    <li>{{ _("Children from families unable to provide basic care") }}</li>
+                    <li>{{ _("At-risk youth referred by social services") }}</li>
+                    <li>{{ _("Children recovering from abuse or neglect") }}</li>
+                    <li>{{ _("Young people awaiting foster or adoptive placement") }}</li>
                 </ul>
             </div>
             <div class="col-lg-6">
@@ -30,26 +30,26 @@
             <div class="col-md-4">
                 <div class="stat-card">
                     <div class="stat-number">80+</div>
-                    <div class="stat-label">Children Currently Served</div>
+                    <div class="stat-label">{{ _("Children Currently Served") }}</div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="stat-card">
                     <div class="stat-number">5–18</div>
-                    <div class="stat-label">Age Range</div>
+                    <div class="stat-label">{{ _("Age Range") }}</div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="stat-card">
                     <div class="stat-number">500+</div>
-                    <div class="stat-label">Lives Transformed Since 2008</div>
+                    <div class="stat-label">{{ _("Lives Transformed Since 2008") }}</div>
                 </div>
             </div>
         </div>
 
         <div class="info-box mt-5">
-            <h4>Our Commitment</h4>
-            <p class="mb-0">We provide comprehensive care including housing, meals, education, healthcare, counseling, and recreational activities. Every child receives an individualized care plan tailored to their unique needs and aspirations.</p>
+            <h4>{{ _("Our Commitment") }}</h4>
+            <p class="mb-0">{{ _("We provide comprehensive care including housing, meals, education, healthcare, counseling, and recreational activities. Every child receives an individualized care plan tailored to their unique needs and aspirations.") }}</p>
         </div>
     </div>
 </section>

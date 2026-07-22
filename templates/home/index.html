@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}{{ _("Home") }}{% endblock %}
 
 {% block content %}
 <section class="hero-section hero-banner">
@@ -14,10 +14,10 @@
                 <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&q=80" alt="Children at the shelter" class="img-fluid rounded-4 shadow">
             </div>
             <div class="col-lg-6">
-                <span class="section-label">Welcome</span>
-                <h2 class="section-title">A Home Built on Compassion</h2>
-                <p class="lead text-muted">Tuệ Quang Children provides safe shelter, education, and emotional support for vulnerable children. We believe every young life holds infinite potential waiting to bloom.</p>
-                <a href="{{ url_for('about.history') }}" class="btn btn-primary btn-lg mt-2">Learn Our Story</a>
+                <span class="section-label">{{ _("Welcome") }}</span>
+                <h2 class="section-title">{{ _("A Home Built on Compassion") }}</h2>
+                <p class="lead text-muted">{{ _("Tuệ Quang Children provides safe shelter, education, and emotional support for vulnerable children. We believe every young life holds infinite potential waiting to bloom.") }}</p>
+                <a href="{{ url_for('about.history') }}" class="btn btn-primary btn-lg mt-2">{{ _("Learn Our Story") }}</a>
             </div>
         </div>
     </div>
@@ -25,11 +25,11 @@
 
 <section class="cta-section section-padding">
     <div class="container text-center">
-        <h2 class="section-title text-white mb-3">Make a Difference Today</h2>
-        <p class="lead text-white-50 mb-4">Your time and generosity can transform a child's life forever.</p>
+        <h2 class="section-title text-white mb-3">{{ _("Make a Difference Today") }}</h2>
+        <p class="lead text-white-50 mb-4">{{ _("Your time and generosity can transform a child's life forever.") }}</p>
         <div class="d-flex flex-wrap justify-content-center gap-3">
-            <a href="{{ url_for('support.volunteer_registration') }}" class="btn btn-light btn-lg">Become a Volunteer</a>
-            <a href="{{ url_for('support.sponsorship_registration') }}" class="btn btn-outline-light btn-lg">Sponsor a Child</a>
+            <a href="{{ url_for('support.volunteer_registration') }}" class="btn btn-light btn-lg">{{ _("Become a Volunteer") }}</a>
+            <a href="{{ url_for('support.sponsorship_registration') }}" class="btn btn-outline-light btn-lg">{{ _("Sponsor a Child") }}</a>
         </div>
     </div>
 </section>

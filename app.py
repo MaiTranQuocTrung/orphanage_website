@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_wtf.csrf import CSRFProtect
 
+import i18n
 from routes import register_blueprints
 
 csrf = CSRFProtect()
@@ -11,6 +12,7 @@ def create_app():
     app.config["SECRET_KEY"] = "dev-secret-key-change-in-production"
 
     csrf.init_app(app)
+    i18n.init_app(app)
     register_blueprints(app)
 
     return app

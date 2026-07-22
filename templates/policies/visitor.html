@@ -1,51 +1,51 @@
 {% extends "base.html" %}
 {% from "partials/page_header.html" import render as page_header %}
 
-{% block title %}Visitor Policy{% endblock %}
+{% block title %}{{ _("Visitor Policy") }}{% endblock %}
 
 {% block content %}
-{{ page_header("Visitor Policy", "Guidelines for visiting our shelter") }}
+{{ page_header(_("Visitor Policy"), _("Guidelines for visiting our shelter")) }}
 
 <section class="section-padding">
     <div class="container">
         <div class="row g-5">
             <div class="col-lg-8">
-                <p class="lead text-muted">We welcome visitors who support our mission while prioritizing the safety and wellbeing of our children.</p>
+                <p class="lead text-muted">{{ _("We welcome visitors who support our mission while prioritizing the safety and wellbeing of our children.") }}</p>
 
                 <div class="policy-section">
-                    <h3>Visiting Hours</h3>
+                    <h3>{{ _("Visiting Hours") }}</h3>
                     <ul>
-                        <li><strong>Family visits:</strong> Saturdays and Sundays, 9:00 AM – 5:00 PM</li>
-                        <li><strong>Approved guests:</strong> By appointment only, Tuesday–Friday, 10:00 AM – 4:00 PM</li>
-                        <li><strong>Holiday visits:</strong> Special schedules announced monthly</li>
+                        <li>{{ _("<strong>Family visits:</strong> Saturdays and Sundays, 9:00 AM – 5:00 PM") | safe }}</li>
+                        <li>{{ _("<strong>Approved guests:</strong> By appointment only, Tuesday–Friday, 10:00 AM – 4:00 PM") | safe }}</li>
+                        <li>{{ _("<strong>Holiday visits:</strong> Special schedules announced monthly") | safe }}</li>
                     </ul>
                 </div>
 
                 <div class="policy-section">
-                    <h3>Registration Requirements</h3>
+                    <h3>{{ _("Registration Requirements") }}</h3>
                     <ul>
-                        <li>All visitors must sign in at the front desk and present valid photo identification.</li>
-                        <li>Family members must be on the approved visitor list maintained by the child's case worker.</li>
-                        <li>First-time visitors require 48-hour advance notice and background verification.</li>
-                        <li>Groups of 5 or more must schedule visits at least one week in advance.</li>
+                        <li>{{ _("All visitors must sign in at the front desk and present valid photo identification.") }}</li>
+                        <li>{{ _("Family members must be on the approved visitor list maintained by the child's case worker.") }}</li>
+                        <li>{{ _("First-time visitors require 48-hour advance notice and background verification.") }}</li>
+                        <li>{{ _("Groups of 5 or more must schedule visits at least one week in advance.") }}</li>
                     </ul>
                 </div>
 
                 <div class="policy-section">
-                    <h3>During Your Visit</h3>
+                    <h3>{{ _("During Your Visit") }}</h3>
                     <ul>
-                        <li>Visitors may use designated common areas; dormitory access requires staff escort.</li>
-                        <li>Photography and video recording of children require written consent.</li>
-                        <li>Gifts must be approved by staff and are subject to safety inspection.</li>
-                        <li>Smoking and alcohol are prohibited anywhere on the premises.</li>
+                        <li>{{ _("Visitors may use designated common areas; dormitory access requires staff escort.") }}</li>
+                        <li>{{ _("Photography and video recording of children require written consent.") }}</li>
+                        <li>{{ _("Gifts must be approved by staff and are subject to safety inspection.") }}</li>
+                        <li>{{ _("Smoking and alcohol are prohibited anywhere on the premises.") }}</li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4">
                 <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" alt="Visitors at the shelter" class="img-fluid rounded-4 shadow mb-4">
                 <div class="info-box">
-                    <h4>Schedule a Visit</h4>
-                    <p class="mb-2">Contact our front desk:</p>
+                    <h4>{{ _("Schedule a Visit") }}</h4>
+                    <p class="mb-2">{{ _("Contact our front desk:") }}</p>
                     <p class="mb-0"><i class="bi bi-telephone me-2"></i>+84 (0) 28 1234 5678 ext. 1</p>
                 </div>
             </div>

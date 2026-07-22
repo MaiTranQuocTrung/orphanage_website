@@ -1,59 +1,59 @@
 {% extends "base.html" %}
 {% from "partials/page_header.html" import render as page_header %}
 
-{% block title %}Intake Process{% endblock %}
+{% block title %}{{ _("Intake Process") }}{% endblock %}
 
 {% block content %}
-{{ page_header("Intake Process", "How children come into our care") }}
+{{ page_header(_("Intake Process"), _("How children come into our care")) }}
 
 <section class="section-padding">
     <div class="container">
         <p class="lead text-muted text-center mb-5 mx-auto" style="max-width: 720px;">
-            Our intake process ensures every child receives appropriate assessment, documentation, and a warm welcome into the Tuệ Quang family.
+            {{ _("Our intake process ensures every child receives appropriate assessment, documentation, and a warm welcome into the Tuệ Quang family.") }}
         </p>
 
         <div class="process-steps">
             <div class="process-step">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <h3>Referral</h3>
-                    <p>Children are referred by social services, hospitals, community organizations, or legal guardians. All referrals are reviewed by our intake committee within 48 hours.</p>
+                    <h3>{{ _("Referral") }}</h3>
+                    <p>{{ _("Children are referred by social services, hospitals, community organizations, or legal guardians. All referrals are reviewed by our intake committee within 48 hours.") }}</p>
                 </div>
             </div>
             <div class="process-step">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <h3>Initial Assessment</h3>
-                    <p>Our social workers conduct a comprehensive evaluation including medical history, educational background, emotional needs, and family circumstances.</p>
+                    <h3>{{ _("Initial Assessment") }}</h3>
+                    <p>{{ _("Our social workers conduct a comprehensive evaluation including medical history, educational background, emotional needs, and family circumstances.") }}</p>
                 </div>
             </div>
             <div class="process-step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <h3>Documentation</h3>
-                    <p>Required legal documents are collected and verified. This includes birth certificates, court orders (if applicable), and medical records.</p>
+                    <h3>{{ _("Documentation") }}</h3>
+                    <p>{{ _("Required legal documents are collected and verified. This includes birth certificates, court orders (if applicable), and medical records.") }}</p>
                 </div>
             </div>
             <div class="process-step">
                 <div class="step-number">4</div>
                 <div class="step-content">
-                    <h3>Orientation & Welcome</h3>
-                    <p>New residents receive a facility tour, meet their caregivers and peers, and are assigned a buddy to help them adjust during their first weeks.</p>
+                    <h3>{{ _("Orientation & Welcome") }}</h3>
+                    <p>{{ _("New residents receive a facility tour, meet their caregivers and peers, and are assigned a buddy to help them adjust during their first weeks.") }}</p>
                 </div>
             </div>
             <div class="process-step">
                 <div class="step-number">5</div>
                 <div class="step-content">
-                    <h3>Care Plan Development</h3>
-                    <p>Within 30 days, an individualized care plan is created covering education, health, counseling, and long-term goals. Plans are reviewed quarterly.</p>
+                    <h3>{{ _("Care Plan Development") }}</h3>
+                    <p>{{ _("Within 30 days, an individualized care plan is created covering education, health, counseling, and long-term goals. Plans are reviewed quarterly.") }}</p>
                 </div>
             </div>
         </div>
 
         <div class="info-box mt-5">
-            <h4>For Referring Agencies</h4>
-            <p>Please contact our intake coordinator at <a href="mailto:tranlananh208c@gmail.com">tranlananh208c@gmail.com</a> or call +84 (0) 28 1234 5678 ext. 2.</p>
-            <p class="mb-0"><a href="#" class="btn btn-outline-primary btn-sm">Download Referral Form (PDF)</a></p>
+            <h4>{{ _("For Referring Agencies") }}</h4>
+            <p>{{ _("Please contact our intake coordinator at <a href=\"mailto:tranlananh208c@gmail.com\">tranlananh208c@gmail.com</a> or call +84 (0) 28 1234 5678 ext. 2.") | safe }}</p>
+            <p class="mb-0"><a href="#" class="btn btn-outline-primary btn-sm">{{ _("Download Referral Form (PDF)") }}</a></p>
         </div>
     </div>
 </section>

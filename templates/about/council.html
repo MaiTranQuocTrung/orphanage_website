@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% from "partials/page_header.html" import render as page_header %}
 
-{% block title %}Founding Council{% endblock %}
+{% block title %}{{ _("Founding Council") }}{% endblock %}
 
 {% block content %}
-{{ page_header("Founding Council", "Meet the leaders who established our mission") }}
+{{ page_header(_("Founding Council"), _("Meet the leaders who established our mission")) }}
 
 <section class="section-padding">
     <div class="container">
         <p class="text-muted text-center mb-5 mx-auto" style="max-width: 640px;">
-            Click on a council member's photo to learn more about their background and contributions to Tuệ Quang Children.
+            {{ _("Click on a council member's photo to learn more about their background and contributions to Tuệ Quang Children.") }}
         </p>
 
         <div class="row g-4 justify-content-center">
@@ -20,19 +20,19 @@
                         data-bs-toggle="modal"
                         data-bs-target="#councilModal"
                         data-name="{{ member.name }}"
-                        data-role="{{ member.role }}"
+                        data-role="{{ _(member.role) }}"
                         data-photo="{{ member.photo }}"
-                        data-bio="{{ member.bio }}">
+                        data-bio="{{ _(member.bio) }}">
                     <div class="council-photo">
                         <img src="{{ member.photo }}" alt="{{ member.name }}">
                         <div class="council-overlay">
                             <i class="bi bi-person-lines-fill"></i>
-                            <span>View Profile</span>
+                            <span>{{ _("View Profile") }}</span>
                         </div>
                     </div>
                     <div class="council-info">
                         <h3>{{ member.name }}</h3>
-                        <p>{{ member.role }}</p>
+                        <p>{{ _(member.role) }}</p>
                     </div>
                 </button>
             </div>
@@ -45,7 +45,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header border-0">
-                <h5 class="modal-title" id="councilModalLabel">Council Member</h5>
+                <h5 class="modal-title" id="councilModalLabel">{{ _("Council Member") }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
