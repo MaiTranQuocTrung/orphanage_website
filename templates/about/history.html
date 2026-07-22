@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% from "partials/page_header.html" import render as page_header %}
+
+{% block title %}History & Formation{% endblock %}
+
+{% block content %}
+{{ page_header("History & Formation", "The journey that shaped our shelter") }}
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <h2 class="section-title">Our Beginning</h2>
+                <p>Tuệ Quang Children was founded in 2008 by a group of educators, social workers, and community leaders who witnessed the growing need for safe housing and holistic care for abandoned and at-risk children in the region.</p>
+                <p>What began as a small home for twelve children has grown into a comprehensive shelter serving over 80 young lives. Our founders believed that shelter alone was not enough — children need education, emotional healing, and a community that believes in their future.</p>
+
+                <h3 class="h4 mt-5">Key Milestones</h3>
+                <ul class="timeline">
+                    <li><strong>2008</strong> — First shelter opened with 12 children</li>
+                    <li><strong>2012</strong> — Education center and tutoring program launched</li>
+                    <li><strong>2016</strong> — Expanded to current campus with dormitories and play areas</li>
+                    <li><strong>2020</strong> — Mental health and counseling services introduced</li>
+                    <li><strong>2024</strong> — Alumni mentorship program established</li>
+                </ul>
+            </div>
+            <div class="col-lg-5">
+                <img src="https://images.unsplash.com/photo-1491434639816-48f3db6f1f04?w=800&q=80" alt="Historical photo of the shelter" class="img-fluid rounded-4 shadow mb-4">
+                <div class="info-box">
+                    <h4>Formation Principles</h4>
+                    <p class="mb-0">Built on Buddhist values of compassion (<em>từ bi</em>) and wisdom (<em>tuệ</em>), our name reflects our commitment to enlightened care for every child.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

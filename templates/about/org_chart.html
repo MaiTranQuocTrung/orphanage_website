@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% from "partials/page_header.html" import render as page_header %}
+
+{% block title %}Organizational Chart{% endblock %}
+
+{% block content %}
+{{ page_header("Organizational Chart", "Our team structure and leadership") }}
+
+<section class="section-padding pt-4">
+    <div class="container">
+        <div class="org-diagram mb-5">
+            <div class="org-level org-level-1">
+                <div class="org-node">Executive Director</div>
+            </div>
+            <div class="org-connector-v"></div>
+            <div class="org-level org-level-2">
+                <div class="org-node">Director of Care</div>
+                <div class="org-node">Director of Education</div>
+                <div class="org-node">Director of Operations</div>
+            </div>
+            <div class="org-connector-v org-connector-branch"></div>
+            <div class="org-level org-level-3">
+                <div class="org-node org-node-sm">Care Team</div>
+            </div>
+        </div>
+
+        {% for level in org_chart %}
+        <div class="org-table-section mb-5">
+            <h2 class="h4 mb-4">{{ level.title }}</h2>
+            <div class="table-responsive">
+                <table class="table org-table align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width: 100px;">Photo</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Bio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for member in level.members %}
+                        <tr>
+                            <td>
+                                <img src="{{ member.photo }}" alt="{{ member.name }}" class="org-table-photo rounded-circle">
+                            </td>
+                            <td><strong>{{ member.name }}</strong></td>
+                            <td>{{ member.role }}</td>
+                            <td class="text-muted">{{ member.bio }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

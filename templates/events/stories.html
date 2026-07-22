@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% from "partials/page_header.html" import render as page_header %}
+
+{% block title %}Stories of Love{% endblock %}
+
+{% block content %}
+{{ page_header("Stories of Love", "Inspiring journeys from our shelter family") }}
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-4">
+            {% for story in stories %}
+            <div class="col-md-6 col-lg-4">
+                <article class="card card-hover h-100">
+                    <img src="{{ story.image }}" class="card-img-top" alt="{{ story.title }}">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge bg-secondary-subtle text-secondary mb-2 align-self-start">{{ story.date }}</span>
+                        <h2 class="card-title h5">{{ story.title }}</h2>
+                        <p class="card-text text-muted flex-grow-1">{{ story.excerpt }}</p>
+                        <a href="{{ story.link }}" class="btn btn-outline-primary btn-sm align-self-start">Read Full Story</a>
+                    </div>
+                </article>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

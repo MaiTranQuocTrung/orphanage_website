@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% from "partials/page_header.html" import render as page_header %}
+
+{% block title %}Volunteer Policy{% endblock %}
+
+{% block content %}
+{{ page_header("Volunteer Policy", "Standards for our valued volunteers") }}
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <p class="lead text-muted">Volunteers are essential to our mission. These policies ensure a safe, meaningful experience for both volunteers and children.</p>
+
+                <div class="policy-section">
+                    <h3>Eligibility & Screening</h3>
+                    <ul>
+                        <li>Volunteers must be at least 18 years old (16–17 with parental consent for limited roles).</li>
+                        <li>All volunteers undergo background checks and reference verification.</li>
+                        <li>A minimum commitment of 3 months and 4 hours per week is required for regular volunteers.</li>
+                        <li>Volunteers working directly with children must complete child protection training.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3>Roles & Responsibilities</h3>
+                    <ul>
+                        <li><strong>Tutoring:</strong> Academic support in math, Vietnamese, English, and sciences.</li>
+                        <li><strong>Activities:</strong> Sports, arts, music, and recreational programming.</li>
+                        <li><strong>Administrative:</strong> Office support, event planning, and fundraising.</li>
+                        <li><strong>Maintenance:</strong> Facility upkeep, gardening, and repairs.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3>Code of Conduct</h3>
+                    <ul>
+                        <li>Never be alone with a child behind closed doors.</li>
+                        <li>Do not share personal contact information with children.</li>
+                        <li>Report any concerns about a child's wellbeing immediately to staff.</li>
+                        <li>Maintain confidentiality about children and shelter operations.</li>
+                        <li>Follow all shelter rules and staff directives at all times.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="info-box">
+                    <h4>Ready to Volunteer?</h4>
+                    <p>Complete our registration form to begin the application process.</p>
+                    <a href="{{ url_for('support.volunteer_registration') }}" class="btn btn-primary">Register Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% from "partials/page_header.html" import render as page_header %}
+
+{% block title %}Shelter Rules{% endblock %}
+
+{% block content %}
+{{ page_header("Shelter Rules", "Guidelines for a safe and harmonious home") }}
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <p class="lead text-muted">These rules help create a structured, respectful environment where every child feels safe and valued.</p>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-house-door me-2"></i>Daily Life</h3>
+                    <ul>
+                        <li>Wake-up time is 6:30 AM on school days; lights out by 9:00 PM for younger children, 10:00 PM for teens.</li>
+                        <li>All residents participate in morning chores and maintain personal hygiene standards.</li>
+                        <li>Meals are served at scheduled times in the dining hall; no food in dormitories.</li>
+                        <li>Personal belongings must be kept tidy in assigned storage spaces.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-shield-check me-2"></i>Safety & Conduct</h3>
+                    <ul>
+                        <li>Physical violence, bullying, and verbal abuse are strictly prohibited.</li>
+                        <li>Children must remain on campus unless accompanied by authorized staff.</li>
+                        <li>Electronic devices are permitted during designated hours only.</li>
+                        <li>Substance use (alcohol, tobacco, drugs) is forbidden for all residents.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-mortarboard me-2"></i>Education</h3>
+                    <ul>
+                        <li>School attendance is mandatory unless excused for medical reasons.</li>
+                        <li>Homework and study time is scheduled daily from 4:00–6:00 PM.</li>
+                        <li>Tutoring support is available for children who need extra help.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-people me-2"></i>Community Respect</h3>
+                    <ul>
+                        <li>Respect staff, volunteers, and fellow residents at all times.</li>
+                        <li>Participate in group activities, community service, and cultural events.</li>
+                        <li>Resolve conflicts peacefully with the help of counselors when needed.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="info-box sticky-top" style="top: 100px;">
+                    <h4>Questions?</h4>
+                    <p>Residents and guardians may speak with any care staff member about these rules. Updates are posted on the community bulletin board.</p>
+                    <p class="mb-0"><a href="{{ url_for('policies.visitor') }}">View Visitor Policy &rarr;</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

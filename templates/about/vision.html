@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% from "partials/page_header.html" import render as page_header %}
+
+{% block title %}Vision & Values{% endblock %}
+
+{% block content %}
+{{ page_header("Vision & Values", "Guiding principles that shape everything we do") }}
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-5 align-items-center mb-5">
+            <div class="col-lg-6">
+                <span class="section-label">Our Vision</span>
+                <h2 class="section-title">A World Where Every Child Thrives</h2>
+                <p class="lead">We envision a community where no child is left without shelter, education, or the love they need to reach their full potential.</p>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80" alt="Children learning together" class="img-fluid rounded-4 shadow">
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="value-card">
+                    <div class="value-icon"><i class="bi bi-shield-heart"></i></div>
+                    <h3>Safety First</h3>
+                    <p>Every child deserves a physically and emotionally safe environment where they can heal and grow without fear.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card">
+                    <div class="value-icon"><i class="bi bi-book"></i></div>
+                    <h3>Education & Growth</h3>
+                    <p>We invest in academic excellence, life skills, and creative expression to prepare children for independent, fulfilling lives.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card">
+                    <div class="value-icon"><i class="bi bi-people"></i></div>
+                    <h3>Community & Belonging</h3>
+                    <p>We foster a family-like atmosphere where children experience unconditional acceptance and lasting relationships.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card">
+                    <div class="value-icon"><i class="bi bi-hand-thumbs-up"></i></div>
+                    <h3>Dignity & Respect</h3>
+                    <p>Every interaction honors the inherent worth of each child, regardless of their background or circumstances.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card">
+                    <div class="value-icon"><i class="bi bi-recycle"></i></div>
+                    <h3>Transparency</h3>
+                    <p>We operate with openness and accountability to our donors, partners, and the children we serve.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card">
+                    <div class="value-icon"><i class="bi bi-globe2"></i></div>
+                    <h3>Cultural Heritage</h3>
+                    <p>We celebrate Vietnamese traditions while embracing diversity and preparing children for a global future.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
