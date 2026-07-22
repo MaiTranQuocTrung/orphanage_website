@@ -18,6 +18,9 @@ TRANSLATIONS = {
         "Beneficiaries": "Đối tượng hỗ trợ",
         "Intake Process": "Quy trình Tiếp nhận",
         "Shelter Policies": "Quy định Mái ấm",
+        "Operating Charter": "Quy chế Hoạt động",
+        "Organization & Staffing": "Tổ chức & Nhân sự",
+        "Children's Rights & Care": "Quyền lợi & Chăm sóc Trẻ em",
         "Shelter Rules": "Nội quy Mái ấm",
         "Visitor Policy": "Chính sách Thăm viếng",
         "Volunteer Policy": "Chính sách Tình nguyện",
@@ -207,45 +210,186 @@ TRANSLATIONS = {
             "Vui lòng liên hệ điều phối viên tiếp nhận của chúng tôi tại <a href=\"mailto:tranlananh208c@gmail.com\">tranlananh208c@gmail.com</a> hoặc gọi 091 555 06 29.",
         "Download Referral Form (PDF)": "Tải Mẫu Giới thiệu (PDF)",
 
-        # ---- Shelter Rules ----
-        "These rules help create a structured, respectful environment where every child feels safe and valued.":
-            "Những nội quy này giúp tạo nên một môi trường có nề nếp và tôn trọng, nơi mọi em nhỏ đều cảm thấy an toàn và được trân trọng.",
-        "Daily Life": "Sinh hoạt Hằng ngày",
-        "Wake-up time is 6:30 AM on school days; lights out by 9:00 PM for younger children, 10:00 PM for teens.":
-            "Giờ thức dậy là 6:30 sáng vào ngày học; tắt đèn lúc 9:00 tối với các em nhỏ và 10:00 tối với thanh thiếu niên.",
-        "All residents participate in morning chores and maintain personal hygiene standards.":
-            "Tất cả thành viên tham gia việc nhà buổi sáng và giữ gìn vệ sinh cá nhân.",
-        "Meals are served at scheduled times in the dining hall; no food in dormitories.":
-            "Bữa ăn được phục vụ đúng giờ tại phòng ăn; không mang thức ăn vào phòng ngủ.",
-        "Personal belongings must be kept tidy in assigned storage spaces.":
-            "Đồ dùng cá nhân phải được sắp xếp gọn gàng trong khu vực cất giữ được phân công.",
-        "Safety & Conduct": "An toàn & Ứng xử",
-        "Physical violence, bullying, and verbal abuse are strictly prohibited.":
-            "Nghiêm cấm bạo lực thể chất, bắt nạt và lăng mạ bằng lời nói.",
-        "Children must remain on campus unless accompanied by authorized staff.":
-            "Các em phải ở trong khuôn viên trừ khi có nhân viên được ủy quyền đi cùng.",
-        "Electronic devices are permitted during designated hours only.":
-            "Thiết bị điện tử chỉ được phép sử dụng trong khung giờ quy định.",
-        "Substance use (alcohol, tobacco, drugs) is forbidden for all residents.":
-            "Nghiêm cấm mọi thành viên sử dụng chất kích thích (rượu bia, thuốc lá, ma túy).",
+        # ---- Operating Charter ----
+        "How Tuệ Quang Shelter is established and governed":
+            "Mái Ấm Tuệ Quang được thành lập và vận hành như thế nào",
+        "Tuệ Quang Shelter operates as a licensed social protection facility caring for orphaned and disadvantaged children, in full accordance with Vietnamese law.":
+            "Mái Ấm Tuệ Quang hoạt động như một cơ sở bảo trợ xã hội được cấp phép, chăm sóc trẻ em mồ côi và có hoàn cảnh khó khăn, tuân thủ đầy đủ pháp luật Việt Nam.",
+        "Legal Basis": "Căn cứ Pháp lý",
+        "Established under Government Decree No. 103/2017/ND-CP on the establishment, organization, operation, dissolution, and management of social assistance establishments.":
+            "Được thành lập theo Nghị định số 103/2017/NĐ-CP của Chính phủ quy định về thành lập, tổ chức, hoạt động, giải thể và quản lý các cơ sở trợ giúp xã hội.",
+        "Operating in accordance with Decree No. 20/2021/ND-CP and Decree No. 76/2024/ND-CP on social assistance policies for beneficiaries.":
+            "Hoạt động theo Nghị định số 20/2021/NĐ-CP và Nghị định số 76/2024/NĐ-CP về chính sách trợ giúp xã hội đối với đối tượng bảo trợ xã hội.",
+        "About the Facility": "Về Cơ sở",
+        "<strong>Full name:</strong> Social Protection Facility for Children in Special Circumstances — Tuệ Quang Shelter.":
+            "<strong>Tên đầy đủ:</strong> Cơ Sở Bảo Trợ Xã Hội chăm sóc trẻ em có hoàn cảnh đặc biệt — Mái Ấm Tuệ Quang.",
+        "<strong>Address:</strong> No. 157 Đặng Xuân Bảng, Hồng Quang Ward, Ninh Bình Province.":
+            "<strong>Địa chỉ:</strong> Số 157 Đặng Xuân Bảng, phường Hồng Quang, tỉnh Ninh Bình.",
+        "<strong>Area of operation:</strong> Ninh Bình Province.":
+            "<strong>Địa bàn hoạt động:</strong> Tỉnh Ninh Bình.",
+        "<strong>Charter capital:</strong> VND 5,000,000,000 (five billion dong).":
+            "<strong>Vốn điều lệ:</strong> 5.000.000.000 đồng (Năm tỷ đồng).",
+        "Our Mission & Core Tasks": "Sứ mệnh & Nhiệm vụ Cốt lõi",
+        "Receive, manage, care for, and protect orphaned children and children who have lost their source of care, providing for their material and emotional wellbeing.":
+            "Tiếp nhận, quản lý, chăm sóc, bảo vệ và chăm lo đời sống vật chất, tinh thần cho trẻ em mồ côi, trẻ em bị mất nguồn nuôi dưỡng.",
+        "Coordinate with partners to provide education, vocational training, and career orientation so children can grow physically, intellectually, and socially.":
+            "Phối hợp với các đơn vị để dạy văn hóa, dạy nghề và giáo dục hướng nghiệp, giúp trẻ phát triển về thể chất, trí tuệ, nhân cách và hòa nhập cộng đồng.",
+        "Work with local authorities to reintegrate eligible children into the community and ensure them a stable life.":
+            "Phối hợp với chính quyền địa phương để đưa các em đủ điều kiện tái hòa nhập cộng đồng và đảm bảo cuộc sống ổn định.",
+        "Provide life-skills education, sports, recreation, and activities that support each child's physical and mental development.":
+            "Cung cấp giáo dục kỹ năng sống, thể dục thể thao, vui chơi và các hoạt động giúp phát triển thể chất và tinh thần cho từng em.",
+        "Partner with training institutions to build social-work capacity for staff and collaborators.":
+            "Hợp tác với các cơ sở đào tạo để nâng cao năng lực công tác xã hội cho đội ngũ nhân viên và cộng tác viên.",
+        "Admit children and maintain their case files in accordance with Articles 27, 28, and 29 of Decree No. 20/2021/ND-CP.":
+            "Tiếp nhận trẻ và lập hồ sơ quản lý đối tượng theo Điều 27, 28 và 29 của Nghị định số 20/2021/NĐ-CP.",
+        "A Non-Profit Facility": "Cơ sở Phi lợi nhuận",
+        "Tuệ Quang Shelter is a charitable social organization established to serve children who have lost their source of care, and it operates on a non-profit basis.":
+            "Mái Ấm Tuệ Quang là tổ chức xã hội từ thiện, được thành lập để phục vụ trẻ em bị mất nguồn nuôi dưỡng và hoạt động không vì lợi nhuận.",
+        "The shelter balances its finances each year to avoid any budget shortfall.":
+            "Mái Ấm luôn cân đối kế hoạch tài chính hằng năm để không xảy ra tình trạng mất cân đối.",
+        "Internal Dispute Resolution": "Giải quyết Tranh chấp Nội bộ",
+        "<strong>Internal conciliation:</strong> The Founding Council and Director first meet to clarify and resolve the dispute in a spirit of respect and good faith, forming a mediation group if necessary.":
+            "<strong>Tự hòa giải:</strong> Hội đồng sáng lập cùng Giám đốc trước tiên tổ chức họp để làm rõ và giải quyết tranh chấp trên tinh thần tôn trọng, thiện chí, thành lập tổ hòa giải nội bộ khi cần.",
+        "<strong>Escalation to the authorities:</strong> If conciliation fails, the matter is reported to the competent state authority for inspection and resolution.":
+            "<strong>Thông qua cơ quan chủ quản:</strong> Nếu hòa giải không đạt kết quả, sự việc được báo cáo lên cơ quan nhà nước có thẩm quyền để kiểm tra và xử lý.",
+        "<strong>Legal resolution:</strong> If it remains unresolved, the parties may bring the case before the People's Court.":
+            "<strong>Giải quyết theo pháp luật:</strong> Nếu vẫn không giải quyết được, các bên có thể khởi kiện tại Tòa án nhân dân.",
+        "Capital Transfer, Dissolution & Amendments": "Chuyển nhượng Vốn, Giải thể & Sửa đổi",
+        "<strong>Capital transfer:</strong> A founding member wishing to transfer their contribution must reach agreement with the Founding Council, submit the transfer for approval by the competent authority, and update the operating license accordingly.":
+            "<strong>Chuyển nhượng vốn:</strong> Thành viên sáng lập muốn chuyển nhượng phần góp vốn cần thống nhất với Hội đồng sáng lập, nộp hồ sơ xin chấp thuận của cơ quan có thẩm quyền và cập nhật giấy phép hoạt động.",
+        "<strong>Dissolution:</strong> The Founding Council may dissolve the facility by following the legally required steps, while fulfilling all obligations to the children, staff, and partners involved.":
+            "<strong>Giải thể:</strong> Hội đồng sáng lập có thể giải thể cơ sở theo các bước pháp luật quy định, đồng thời thực hiện đầy đủ nghĩa vụ đối với trẻ, nhân viên và các bên liên quan.",
+        "<strong>Amendments:</strong> This charter may be amended by agreement of the founding members and with the approval of the competent state authority.":
+            "<strong>Sửa đổi:</strong> Quy chế này có thể được sửa đổi khi có sự thống nhất của các thành viên sáng lập và sự chấp thuận của cơ quan nhà nước có thẩm quyền.",
+        "Governing Document": "Văn bản Điều hành",
+        "This page summarizes the shelter's operating charter (draft, October 2025). For the full document, please contact the shelter office.":
+            "Trang này tóm tắt quy chế hoạt động của Mái Ấm (dự thảo, tháng 10/2025). Để xem văn bản đầy đủ, vui lòng liên hệ văn phòng Mái Ấm.",
+        "See Organization & Staffing": "Xem Tổ chức & Nhân sự",
+
+        # ---- Organization & Staffing ----
+        "Our people and how we are organized": "Con người và cách chúng tôi tổ chức",
+        "Tuệ Quang is staffed and organized to nurture and care for around 15 children in special circumstances, with clearly defined teams and responsibilities.":
+            "Mái Ấm Tuệ Quang được tổ chức và bố trí nhân sự để nuôi dưỡng, chăm sóc khoảng 15 trẻ em có hoàn cảnh đặc biệt, với các nhóm công việc và trách nhiệm rõ ràng.",
+        "Governance": "Quản trị",
+        "The shelter is led by a Founding Council of one Chairperson, two members, and one advisor, who are responsible before the authorities for all of the facility's operations.":
+            "Mái Ấm được điều hành bởi Hội đồng sáng lập gồm 1 Chủ tịch, 2 thành viên và 1 cố vấn, chịu trách nhiệm trước cơ quan chức năng về toàn bộ hoạt động của cơ sở.",
+        "<strong>Chairperson:</strong> Ms. Trần Thu Thủy":
+            "<strong>Chủ tịch:</strong> Bà Trần Thu Thủy",
+        "<strong>Members:</strong> Ms. Trần Thị Lan Anh and Ms. Hoàng Thị Việt Hà":
+            "<strong>Thành viên:</strong> Bà Trần Thị Lan Anh và Bà Hoàng Thị Việt Hà",
+        "<strong>Advisor:</strong> Dorzin Dhondrup Rinpoche":
+            "<strong>Cố vấn:</strong> Dorzin Dhondrup Rinpoche",
+        "The Council sets strategy, approves the organizational structure, recruits key staff, oversees finances, and ensures the shelter operates lawfully.":
+            "Hội đồng xây dựng chiến lược, quyết định cơ cấu tổ chức, tuyển dụng nhân sự chủ chốt, giám sát tài chính và đảm bảo Mái Ấm hoạt động đúng pháp luật.",
+        "Director": "Giám đốc",
+        "Reports directly to the Founding Council and is authorized to manage the shelter's daily operations.":
+            "Báo cáo trực tiếp cho Hội đồng sáng lập và được ủy quyền điều hành các hoạt động hằng ngày của Mái Ấm.",
+        "Oversees social work, including admitting children, developing overall care and nurturing plans, and coordinating with schools and local authorities.":
+            "Phụ trách công tác xã hội, bao gồm tiếp nhận trẻ, lập kế hoạch tổng thể về chăm sóc và nuôi dưỡng, phối hợp với nhà trường và địa phương.",
+        "Professional Teams": "Các Nhóm Chuyên môn",
+        "<strong>Management & administration</strong> — carried out by the founding members and the Director.":
+            "<strong>Quản lý & điều hành</strong> — do các thành viên sáng lập và Giám đốc thực hiện.",
+        "<strong>Direct care & support</strong> — childcare workers; a health, psychology & education officer; a kitchen & nutrition officer; and a housekeeping worker.":
+            "<strong>Chăm sóc & trợ giúp trực tiếp</strong> — nhân viên chăm sóc trẻ; nhân viên y tế, tâm lý, giáo dục; nhân viên phụ trách bếp ăn, dinh dưỡng; và nhân viên tạp vụ.",
+        "<strong>Support & services</strong> — an administration & accounting officer; and a security & fire-safety officer.":
+            "<strong>Hỗ trợ & phục vụ</strong> — nhân viên hành chính, kế toán; và nhân viên bảo vệ, an toàn PCCC.",
+        "Roles & Duties": "Vai trò & Nhiệm vụ",
+        "<strong>Childcare workers:</strong> provide daily care and keep children safe; care directly for infants and young children and guide older children in routines, hygiene, and study; monitor each child's physical and emotional health and report concerns.":
+            "<strong>Nhân viên chăm sóc trẻ:</strong> chăm sóc hằng ngày và đảm bảo an toàn cho trẻ; phục vụ trực tiếp trẻ sơ sinh, mầm non và hướng dẫn trẻ lớn về giờ giấc, vệ sinh, học tập; theo dõi sức khỏe thể chất, tâm lý của từng em và báo cáo khi cần.",
+        "<strong>Kitchen & nutrition officer:</strong> plan daily menus and serve three balanced, safe meals a day, with special menus for sick children; ensure food hygiene and safety.":
+            "<strong>Nhân viên bếp ăn, dinh dưỡng:</strong> xây dựng thực đơn và phục vụ ba bữa ăn cân đối, an toàn mỗi ngày, có thực đơn riêng cho trẻ ốm; đảm bảo an toàn vệ sinh thực phẩm.",
+        "<strong>Health, psychology & education officer:</strong> conduct health checks and vaccinations, provide first-line treatment and arrange hospital care when needed, support children's psychological recovery, and arrange age-appropriate schooling.":
+            "<strong>Nhân viên y tế, tâm lý, giáo dục:</strong> tổ chức khám sức khỏe và tiêm chủng, chăm sóc điều trị ban đầu và chuyển viện khi cần, hỗ trợ phục hồi tâm lý cho trẻ và tổ chức cho trẻ đi học đúng độ tuổi.",
+        "<strong>Housekeeping worker:</strong> keep rooms and the whole facility clean, handle laundry and waste, and support the kitchen when needed.":
+            "<strong>Nhân viên tạp vụ:</strong> giữ vệ sinh phòng ở và toàn bộ Mái Ấm, đảm nhận giặt giũ, rác thải và hỗ trợ công việc bếp khi cần.",
+        "<strong>Administration & accounting officer:</strong> manage contracts, payroll, insurance, records, and correspondence; track funding and ensure transparent, lawful, purpose-bound spending and financial reporting.":
+            "<strong>Nhân viên hành chính, kế toán:</strong> quản lý hợp đồng, tiền lương, bảo hiểm, hồ sơ và công văn; theo dõi nguồn kinh phí và đảm bảo thu chi minh bạch, đúng pháp luật, đúng mục đích và báo cáo tài chính.",
+        "<strong>Security & fire-safety officer:</strong> maintain security and order, manage entry and exit, uphold the shelter's rules and schedule, and ensure fire-prevention safety.":
+            "<strong>Nhân viên bảo vệ, an toàn PCCC:</strong> giữ gìn an ninh trật tự, quản lý người ra vào, duy trì nội quy và giờ giấc của Mái Ấm và đảm bảo an toàn phòng cháy chữa cháy.",
+        "Staff Responsibilities": "Trách nhiệm của Nhân viên",
+        "Serve children with dedication, responsibility, love, and patience.":
+            "Tận tâm, trách nhiệm, yêu thương và kiên nhẫn với trẻ.",
+        "Comply with state policies and the shelter's rules and regulations.":
+            "Chấp hành nghiêm chính sách của Nhà nước và nội quy, quy chế của Mái Ấm.",
+        "Proactively carry out assigned duties, coordinate with colleagues, and report to the Director and responsible founding member.":
+            "Chủ động thực hiện tốt nhiệm vụ được giao, phối hợp với đồng nghiệp và báo cáo Giám đốc cùng thành viên sáng lập phụ trách.",
+        "Follow the shelter's information and reporting procedures.":
+            "Thực hiện đúng chế độ thông tin, báo cáo của Mái Ấm.",
+        "Never exploit the relationship with beneficiaries for personal gain.":
+            "Không lạm dụng mối quan hệ với đối tượng bảo trợ để vụ lợi cá nhân.",
+        "Staffing & Compensation": "Định biên & Tiền lương",
+        "Staffing follows the norms for social protection facilities under Circular No. 33/2017/TT-BLĐTBXH. All staff sign labor contracts and receive wages, allowances, and social insurance as required by the Labor Code.":
+            "Định biên nhân sự tuân theo tiêu chuẩn cơ sở bảo trợ xã hội tại Thông tư số 33/2017/TT-BLĐTBXH. Toàn bộ nhân viên ký hợp đồng lao động và được hưởng lương, phụ cấp, bảo hiểm xã hội theo quy định của Bộ luật Lao động.",
+        "Position": "Vị trí",
+        "Headcount": "Số lượng",
+        "Monthly salary (VND)": "Lương tháng (VND)",
+        "Childcare worker": "Nhân viên chăm sóc trẻ",
+        "Kitchen & nutrition officer": "Nhân viên bếp ăn, dinh dưỡng",
+        "Health, psychology & education officer": "Nhân viên y tế, tâm lý, giáo dục",
+        "Housekeeping worker": "Nhân viên tạp vụ",
+        "Administration & accounting officer": "Nhân viên hành chính, kế toán",
+        "Security & fire-safety officer": "Nhân viên bảo vệ, an toàn PCCC",
+        "Join Our Team": "Gia nhập Đội ngũ",
+        "We welcome caring people who want to make a difference in a child's life.":
+            "Chúng tôi hoan nghênh những người giàu lòng nhân ái muốn tạo nên khác biệt trong cuộc đời một em nhỏ.",
+        "Volunteer With Us": "Tình nguyện cùng Chúng tôi",
+
+        # ---- Children's Rights & Care ----
+        "What every child in our care is entitled to": "Những quyền lợi mà mỗi em được hưởng tại Mái Ấm",
+        "Children cared for at Tuệ Quang enjoy full rights to personal dignity, education, play, and healthcare in accordance with the law.":
+            "Trẻ em được nuôi dưỡng tại Tuệ Quang được hưởng đầy đủ các quyền về nhân thân, học tập, vui chơi giải trí và chăm sóc sức khỏe theo quy định của pháp luật.",
+        "Healthcare": "Chăm sóc Y tế",
+        "Periodic and annual health check-ups, first aid, and treatment when ill.":
+            "Được khám sức khỏe định kỳ và hằng năm, sơ cấp cứu và điều trị khi bị bệnh.",
+        "Hygiene & Daily Necessities": "Vệ sinh & Đồ dùng Sinh hoạt",
+        "Clean water and personal hygiene items, and safe, proper accommodation and meals.":
+            "Được cung cấp đầy đủ nước sạch và đồ dùng vệ sinh cá nhân, nơi ăn ở an toàn và đúng quy định.",
+        "Nutrition": "Dinh dưỡng",
+        "Balanced, sufficient meals with adequate protein and nutrients, and special diets for those with particular needs such as infants or sick children.":
+            "Được cung cấp các bữa ăn cân đối, đủ dinh dưỡng với chất đạm và dưỡng chất cần thiết, có chế độ ăn riêng cho những em có nhu cầu đặc biệt như trẻ sơ sinh hoặc trẻ ốm.",
         "Education": "Giáo dục",
-        "School attendance is mandatory unless excused for medical reasons.":
-            "Việc đến trường là bắt buộc trừ khi được miễn vì lý do sức khỏe.",
-        "Homework and study time is scheduled daily from 4:00–6:00 PM.":
-            "Giờ làm bài tập và tự học diễn ra hằng ngày từ 4:00–6:00 chiều.",
-        "Tutoring support is available for children who need extra help.":
-            "Có hỗ trợ gia sư cho các em cần giúp đỡ thêm.",
-        "Community Respect": "Tôn trọng Cộng đồng",
-        "Respect staff, volunteers, and fellow residents at all times.":
-            "Luôn tôn trọng nhân viên, tình nguyện viên và các bạn cùng mái ấm.",
-        "Participate in group activities, community service, and cultural events.":
-            "Tham gia các hoạt động tập thể, phục vụ cộng đồng và sự kiện văn hóa.",
-        "Resolve conflicts peacefully with the help of counselors when needed.":
-            "Giải quyết mâu thuẫn một cách ôn hòa với sự hỗ trợ của chuyên viên tư vấn khi cần.",
+        "Enrollment in public or private schools in Ninh Bình Province, with full books, materials, and study support.":
+            "Được theo học tại các trường công lập, dân lập trên địa bàn tỉnh Ninh Bình, được cung cấp đầy đủ sách vở, tài liệu và hỗ trợ học tập.",
+        "Guidance in basic life-skills so children can integrate and live safely and healthily.":
+            "Được hướng dẫn các kỹ năng sống căn bản để hòa nhập và sống an toàn, lành mạnh.",
+        "Culture, Sports & Recreation": "Văn hóa, Thể thao & Giải trí",
+        "Learning traditional culture and taking part in age-appropriate sports, play, and recreation within the community.":
+            "Được học văn hóa truyền thống và tham gia các hoạt động thể thao, vui chơi, giải trí phù hợp với lứa tuổi trong cộng đồng.",
+        "Children's Responsibilities": "Trách nhiệm của Trẻ em",
+        "In return, every child helps keep the shelter safe and harmonious. See the":
+            "Đổi lại, mỗi em cùng góp phần giữ cho Mái Ấm an toàn và hòa thuận. Xem",
+        "for details.": "để biết chi tiết.",
+        "Sponsor a Child's Care": "Bảo trợ Chăm sóc một Em nhỏ",
+        "Your support helps provide healthcare, nutrition, and education for every child.":
+            "Sự ủng hộ của bạn giúp mang lại y tế, dinh dưỡng và giáo dục cho mỗi em nhỏ.",
+        "Become a Sponsor": "Trở thành Nhà Bảo trợ",
+
+        # ---- Shelter Rules ----
+        "Every child at Tuệ Quang follows these rules so the shelter stays safe, orderly, and harmonious for everyone.":
+            "Mỗi em tại Tuệ Quang đều tuân thủ những nội quy này để Mái Ấm luôn an toàn, có nề nếp và hòa thuận cho tất cả mọi người.",
+        "Daily Living": "Sinh hoạt Hằng ngày",
+        "Keep to the shelter's schedule for daily activities, sleeping, resting, and meals.":
+            "Chấp hành tốt giờ giấc sinh hoạt, ngủ, nghỉ và giờ ăn theo quy định của Mái Ấm.",
+        "Maintain personal hygiene and keep bedrooms and shared areas clean.":
+            "Giữ gìn vệ sinh cá nhân và giữ sạch phòng ở cùng các khu vực chung.",
+        "Take an active part in self-management and community activities.":
+            "Tích cực tham gia các hoạt động tự quản và hoạt động cộng đồng.",
+        "Conduct & Safety": "Ứng xử & An toàn",
+        "Follow the shelter's rules and regulations at all times.":
+            "Luôn thực hiện đúng nội quy, quy chế của Mái Ấm.",
+        "Help maintain security and order in the bedrooms and throughout the shelter.":
+            "Góp phần giữ gìn an ninh trật tự tại phòng ở và trong toàn Mái Ấm.",
+        "Follow all fire-prevention and fire-fighting rules.":
+            "Bảo đảm thực hiện các quy định về phòng cháy chữa cháy.",
+        "Do not leave the shelter without reporting to and obtaining permission from a manager.":
+            "Không tự ý ra khỏi Mái Ấm khi chưa báo cáo và được sự đồng ý của cán bộ quản lý.",
+        "Property & Belongings": "Tài sản & Đồ dùng",
+        "Take care of the personal items provided to you and of the shelter's property.":
+            "Giữ gìn đồ dùng cá nhân được trang cấp và tài sản của Mái Ấm.",
         "Questions?": "Có thắc mắc?",
-        "Residents and guardians may speak with any care staff member about these rules. Updates are posted on the community bulletin board.":
-            "Các thành viên và người giám hộ có thể trao đổi với bất kỳ nhân viên chăm sóc nào về những nội quy này. Các cập nhật được niêm yết trên bảng tin cộng đồng.",
-        "View Visitor Policy": "Xem Chính sách Thăm viếng",
+        "Residents and guardians may speak with any care staff member about these rules.":
+            "Các thành viên và người giám hộ có thể trao đổi với bất kỳ nhân viên chăm sóc nào về những nội quy này.",
+        "See Children's Rights & Care": "Xem Quyền lợi & Chăm sóc Trẻ em",
 
         # ---- Visitor Policy ----
         "We welcome visitors who support our mission while prioritizing the safety and wellbeing of our children.":

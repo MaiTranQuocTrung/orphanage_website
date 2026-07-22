@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% from "partials/page_header.html" import render as page_header %}
+
+{% block title %}{{ _("Organization & Staffing") }}{% endblock %}
+
+{% block content %}
+{{ page_header(_("Organization & Staffing"), _("Our people and how we are organized")) }}
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <p class="lead text-muted">{{ _("Tuệ Quang is staffed and organized to nurture and care for around 15 children in special circumstances, with clearly defined teams and responsibilities.") }}</p>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-people me-2"></i>{{ _("Governance") }}</h3>
+                    <p>{{ _("The shelter is led by a Founding Council of one Chairperson, two members, and one advisor, who are responsible before the authorities for all of the facility's operations.") }}</p>
+                    <ul>
+                        <li>{{ _("<strong>Chairperson:</strong> Ms. Trần Thu Thủy") | safe }}</li>
+                        <li>{{ _("<strong>Members:</strong> Ms. Trần Thị Lan Anh and Ms. Hoàng Thị Việt Hà") | safe }}</li>
+                        <li>{{ _("<strong>Advisor:</strong> Dorzin Dhondrup Rinpoche") | safe }}</li>
+                    </ul>
+                    <p>{{ _("The Council sets strategy, approves the organizational structure, recruits key staff, oversees finances, and ensures the shelter operates lawfully.") }}</p>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-person-badge me-2"></i>{{ _("Director") }}</h3>
+                    <ul>
+                        <li>{{ _("Reports directly to the Founding Council and is authorized to manage the shelter's daily operations.") }}</li>
+                        <li>{{ _("Oversees social work, including admitting children, developing overall care and nurturing plans, and coordinating with schools and local authorities.") }}</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-diagram-3 me-2"></i>{{ _("Professional Teams") }}</h3>
+                    <ul>
+                        <li>{{ _("<strong>Management & administration</strong> — carried out by the founding members and the Director.") | safe }}</li>
+                        <li>{{ _("<strong>Direct care & support</strong> — childcare workers; a health, psychology & education officer; a kitchen & nutrition officer; and a housekeeping worker.") | safe }}</li>
+                        <li>{{ _("<strong>Support & services</strong> — an administration & accounting officer; and a security & fire-safety officer.") | safe }}</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-list-check me-2"></i>{{ _("Roles & Duties") }}</h3>
+                    <ul>
+                        <li>{{ _("<strong>Childcare workers:</strong> provide daily care and keep children safe; care directly for infants and young children and guide older children in routines, hygiene, and study; monitor each child's physical and emotional health and report concerns.") | safe }}</li>
+                        <li>{{ _("<strong>Kitchen & nutrition officer:</strong> plan daily menus and serve three balanced, safe meals a day, with special menus for sick children; ensure food hygiene and safety.") | safe }}</li>
+                        <li>{{ _("<strong>Health, psychology & education officer:</strong> conduct health checks and vaccinations, provide first-line treatment and arrange hospital care when needed, support children's psychological recovery, and arrange age-appropriate schooling.") | safe }}</li>
+                        <li>{{ _("<strong>Housekeeping worker:</strong> keep rooms and the whole facility clean, handle laundry and waste, and support the kitchen when needed.") | safe }}</li>
+                        <li>{{ _("<strong>Administration & accounting officer:</strong> manage contracts, payroll, insurance, records, and correspondence; track funding and ensure transparent, lawful, purpose-bound spending and financial reporting.") | safe }}</li>
+                        <li>{{ _("<strong>Security & fire-safety officer:</strong> maintain security and order, manage entry and exit, uphold the shelter's rules and schedule, and ensure fire-prevention safety.") | safe }}</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-shield-check me-2"></i>{{ _("Staff Responsibilities") }}</h3>
+                    <ul>
+                        <li>{{ _("Serve children with dedication, responsibility, love, and patience.") }}</li>
+                        <li>{{ _("Comply with state policies and the shelter's rules and regulations.") }}</li>
+                        <li>{{ _("Proactively carry out assigned duties, coordinate with colleagues, and report to the Director and responsible founding member.") }}</li>
+                        <li>{{ _("Follow the shelter's information and reporting procedures.") }}</li>
+                        <li>{{ _("Never exploit the relationship with beneficiaries for personal gain.") }}</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="bi bi-cash-coin me-2"></i>{{ _("Staffing & Compensation") }}</h3>
+                    <p>{{ _("Staffing follows the norms for social protection facilities under Circular No. 33/2017/TT-BLĐTBXH. All staff sign labor contracts and receive wages, allowances, and social insurance as required by the Labor Code.") }}</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered align-middle">
+                            <thead>
+                                <tr>
+                                    <th>{{ _("Position") }}</th>
+                                    <th>{{ _("Headcount") }}</th>
+                                    <th>{{ _("Monthly salary (VND)") }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>{{ _("Director") }}</td><td>1</td><td>12,000,000 – 18,000,000</td></tr>
+                                <tr><td>{{ _("Childcare worker") }}</td><td>4–5</td><td>6,500,000 – 8,500,000</td></tr>
+                                <tr><td>{{ _("Kitchen & nutrition officer") }}</td><td>1</td><td>5,000,000 – 7,000,000</td></tr>
+                                <tr><td>{{ _("Health, psychology & education officer") }}</td><td>1</td><td>7,000,000 – 10,000,000</td></tr>
+                                <tr><td>{{ _("Housekeeping worker") }}</td><td>1</td><td>5,000,000 – 6,000,000</td></tr>
+                                <tr><td>{{ _("Administration & accounting officer") }}</td><td>1</td><td>7,000,000 – 10,000,000</td></tr>
+                                <tr><td>{{ _("Security & fire-safety officer") }}</td><td>1</td><td>5,000,000 – 6,000,000</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="info-box sticky-top" style="top: 100px;">
+                    <h4>{{ _("Join Our Team") }}</h4>
+                    <p>{{ _("We welcome caring people who want to make a difference in a child's life.") }}</p>
+                    <a href="{{ url_for('support.volunteer_registration') }}" class="btn btn-primary">{{ _("Volunteer With Us") }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

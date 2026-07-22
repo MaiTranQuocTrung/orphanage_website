@@ -43,7 +43,10 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle {% if request.endpoint and request.endpoint.startswith('policies.') %}active{% endif %}" href="#" data-bs-toggle="dropdown">{{ _("Shelter Policies") }}</a>
                         <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ url_for('policies.charter') }}">{{ _("Operating Charter") }}</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('policies.organization') }}">{{ _("Organization & Staffing") }}</a></li>
                             <li><a class="dropdown-item" href="{{ url_for('policies.rules') }}">{{ _("Shelter Rules") }}</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('policies.child_rights') }}">{{ _("Children's Rights & Care") }}</a></li>
                             <li><a class="dropdown-item" href="{{ url_for('policies.visitor') }}">{{ _("Visitor Policy") }}</a></li>
                             <li><a class="dropdown-item" href="{{ url_for('policies.volunteer') }}">{{ _("Volunteer Policy") }}</a></li>
                             <li><a class="dropdown-item" href="{{ url_for('policies.child_protection') }}">{{ _("Child Protection Policy") }}</a></li>
