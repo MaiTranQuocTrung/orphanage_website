@@ -4,15 +4,17 @@
 {% block title %}{{ _("Vision & Values") }}{% endblock %}
 
 {% block content %}
-{{ page_header(_("Vision & Values"), _("Guiding principles that shape everything we do")) }}
+{{ page_header(_("Vision & Values"), _("Every child deserves to grow up in love and care")) }}
 
 <section class="section-padding">
     <div class="container">
         <div class="row g-5 align-items-center mb-5">
             <div class="col-lg-6">
                 <span class="section-label">{{ _("Our Vision") }}</span>
-                <h2 class="section-title">{{ _("A World Where Every Child Thrives") }}</h2>
-                <p class="lead">{{ _("We envision a community where no child is left without shelter, education, or the love they need to reach their full potential.") }}</p>
+                <h2 class="section-title">{{ _("A Peaceful Home of Love and Wisdom") }}</h2>
+                <p>{{ _("Born from the aspiration of our founding members and the shared efforts of the shelter's community, Tuệ Quang was formed to become a peaceful, warm home for children in disadvantaged circumstances.") }}</p>
+                <p>{{ _("We believe that love must be illuminated by wisdom. That is why Tuệ Quang cares for children not only materially, but also by nurturing their goodness and their capacity to live happily.") }}</p>
+                <p class="mb-0">{{ _("In Hồng Quang, Ninh Bình, a shelter is taking shape so that children who need protection can grow up in safety, warmth, and hope.") }}</p>
             </div>
             <div class="col-lg-6">
                 <img src="{{ url_for('static', filename='img/about6.png') }}" alt="Children welcomed with love" class="img-fluid rounded-4 shadow">
@@ -22,44 +24,23 @@
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="value-card">
+                    <div class="value-icon"><i class="bi bi-heart"></i></div>
+                    <h3>{{ _("Love") }}</h3>
+                    <p>{{ _("Give every child a loving home where they can play, learn, and grow in warmth, care, and sharing.") }}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card">
+                    <div class="value-icon"><i class="bi bi-lightbulb"></i></div>
+                    <h3>{{ _("Wisdom") }}</h3>
+                    <p>{{ _("Let love be guided by wisdom, so that children are nurtured in both material care and the capacity for a happy, meaningful life.") }}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card">
                     <div class="value-icon"><i class="bi bi-shield-check"></i></div>
-                    <h3>{{ _("Safety First") }}</h3>
-                    <p>{{ _("Every child deserves a physically and emotionally safe environment where they can heal and grow without fear.") }}</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="value-card">
-                    <div class="value-icon"><i class="bi bi-book"></i></div>
-                    <h3>{{ _("Education & Growth") }}</h3>
-                    <p>{{ _("We invest in academic excellence, life skills, and creative expression to prepare children for independent, fulfilling lives.") }}</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="value-card">
-                    <div class="value-icon"><i class="bi bi-people"></i></div>
-                    <h3>{{ _("Community & Belonging") }}</h3>
-                    <p>{{ _("We foster a family-like atmosphere where children experience unconditional acceptance and lasting relationships.") }}</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="value-card">
-                    <div class="value-icon"><i class="bi bi-hand-thumbs-up"></i></div>
-                    <h3>{{ _("Dignity & Respect") }}</h3>
-                    <p>{{ _("Every interaction honors the inherent worth of each child, regardless of their background or circumstances.") }}</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="value-card">
-                    <div class="value-icon"><i class="bi bi-recycle"></i></div>
-                    <h3>{{ _("Transparency") }}</h3>
-                    <p>{{ _("We operate with openness and accountability to our donors, partners, and the children we serve.") }}</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="value-card">
-                    <div class="value-icon"><i class="bi bi-globe2"></i></div>
-                    <h3>{{ _("Cultural Heritage") }}</h3>
-                    <p>{{ _("We celebrate Vietnamese traditions while embracing diversity and preparing children for a global future.") }}</p>
+                    <h3>{{ _("Safety & Hope") }}</h3>
+                    <p>{{ _("Offer children who need protection the chance to grow up in safety, warmth, and hope.") }}</p>
                 </div>
             </div>
         </div>
