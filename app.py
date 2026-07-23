@@ -18,7 +18,7 @@ csrf = CSRFProtect()
 
 def create_app():
     app = Flask(__name__)
-    app.config["SECRET_KEY"] = "dev-secret-key-change-in-production"
+    app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "dev-secret-key-change-in-production")
 
     csrf.init_app(app)
     i18n.init_app(app)
