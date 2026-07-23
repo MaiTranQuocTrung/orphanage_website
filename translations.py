@@ -48,6 +48,7 @@ TRANSLATIONS = {
         # ---- Page headers (title / subtitle) ----
         "The journey that shaped our shelter": "Hành trình đã hình thành nên mái ấm của chúng tôi",
         "Guiding principles that shape everything we do": "Những nguyên tắc dẫn dắt mọi việc chúng tôi làm",
+        "Every child deserves to grow up in love and care": "Mỗi đứa trẻ đều xứng đáng được lớn lên trong tình yêu thương và sự quan tâm",
         "Meet the leaders who established our mission": "Gặp gỡ những người đã khởi tạo sứ mệnh của chúng tôi",
         "Our team structure and leadership": "Cơ cấu đội ngũ và ban lãnh đạo",
         "Who we help and how we serve": "Chúng tôi giúp ai và phục vụ như thế nào",
@@ -98,27 +99,22 @@ TRANSLATIONS = {
 
         # ---- Vision & Values ----
         "Our Vision": "Tầm nhìn của chúng tôi",
-        "A World Where Every Child Thrives": "Một thế giới nơi mọi em nhỏ đều phát triển",
-        "We envision a community where no child is left without shelter, education, or the love they need to reach their full potential.":
-            "Chúng tôi hướng tới một cộng đồng nơi không em nhỏ nào bị bỏ lại mà thiếu mái ấm, giáo dục hay tình yêu thương cần thiết để phát huy hết tiềm năng.",
-        "Safety First": "An toàn trên hết",
-        "Every child deserves a physically and emotionally safe environment where they can heal and grow without fear.":
-            "Mọi em nhỏ đều xứng đáng có một môi trường an toàn về thể chất và tinh thần, nơi các em có thể chữa lành và trưởng thành mà không sợ hãi.",
-        "Education & Growth": "Giáo dục & Phát triển",
-        "We invest in academic excellence, life skills, and creative expression to prepare children for independent, fulfilling lives.":
-            "Chúng tôi đầu tư vào học vấn, kỹ năng sống và khả năng sáng tạo để chuẩn bị cho các em một cuộc sống tự lập và trọn vẹn.",
-        "Community & Belonging": "Cộng đồng & Gắn kết",
-        "We foster a family-like atmosphere where children experience unconditional acceptance and lasting relationships.":
-            "Chúng tôi vun đắp một bầu không khí như gia đình, nơi các em được đón nhận vô điều kiện và xây dựng những mối quan hệ bền lâu.",
-        "Dignity & Respect": "Nhân phẩm & Tôn trọng",
-        "Every interaction honors the inherent worth of each child, regardless of their background or circumstances.":
-            "Mọi sự tương tác đều tôn vinh giá trị vốn có của từng em, bất kể xuất thân hay hoàn cảnh.",
-        "Transparency": "Minh bạch",
-        "We operate with openness and accountability to our donors, partners, and the children we serve.":
-            "Chúng tôi hoạt động một cách cởi mở và có trách nhiệm với các nhà hảo tâm, đối tác và các em nhỏ mà chúng tôi phục vụ.",
-        "Cultural Heritage": "Di sản Văn hóa",
-        "We celebrate Vietnamese traditions while embracing diversity and preparing children for a global future.":
-            "Chúng tôi trân trọng truyền thống Việt Nam đồng thời đón nhận sự đa dạng và chuẩn bị cho các em một tương lai toàn cầu.",
+        "A Peaceful Home of Love and Wisdom": "Một mái nhà bình an của tình yêu thương và trí tuệ",
+        "Born from the aspiration of our founding members and the shared efforts of the shelter's community, Tuệ Quang was formed to become a peaceful, warm home for children in disadvantaged circumstances.":
+            "Từ tâm nguyện của các thành viên sáng lập cùng sự chung tay của các thành viên Mái Ấm và Cộng đồng, Mái Ấm Tuệ Quang được hình thành với mong muốn trở thành một mái nhà bình an và ấm áp cho những trẻ em có hoàn cảnh thiệt thòi.",
+        "We believe that love must be illuminated by wisdom. That is why Tuệ Quang cares for children not only materially, but also by nurturing their goodness and their capacity to live happily.":
+            "Chúng tôi tin rằng tình yêu thương cần được soi sáng bởi trí tuệ, vì vậy, Mái Ấm Tuệ Quang không chỉ chăm sóc các em về vật chất, mà còn hướng tới việc nuôi dưỡng lòng tốt và khả năng sống hạnh phúc của trẻ.",
+        "In Hồng Quang, Ninh Bình, a shelter is taking shape so that children who need protection can grow up in safety, warmth, and hope.":
+            "Tại xã Hồng Quang, tỉnh Ninh Bình, một Mái Ấm đang hình thành để những em bé cần được chở che có cơ hội lớn lên trong sự an toàn, ấm áp và hy vọng.",
+        "Love": "Yêu Thương",
+        "Give every child a loving home where they can play, learn, and grow in warmth, care, and sharing.":
+            "Mang đến cho mỗi em một ngôi nhà yêu thương, nơi các em được chơi, được học, và lớn lên trong tình cảm ấm áp, quan tâm và chia sẻ.",
+        "Wisdom": "Trí Tuệ",
+        "Let love be guided by wisdom, so that children are nurtured in both material care and the capacity for a happy, meaningful life.":
+            "Để tình yêu thương được soi sáng bởi trí tuệ, giúp các em được nuôi dưỡng cả về vật chất lẫn khả năng sống hạnh phúc và ý nghĩa.",
+        "Safety & Hope": "An toàn & Hy vọng",
+        "Offer children who need protection the chance to grow up in safety, warmth, and hope.":
+            "Mang đến cho những em bé cần được chở che cơ hội lớn lên trong sự an toàn, ấm áp và hy vọng.",
 
         # ---- Founding Council ----
         "Click on a council member's photo to learn more about their background and contributions to Tuệ Quang Children.":
