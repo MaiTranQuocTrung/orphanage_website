@@ -108,12 +108,12 @@ TRANSLATIONS = {
         "Love": "Yêu Thương",
         "Give every child a loving home where they can play, learn, and grow in warmth, care, and sharing.":
             "Mang đến cho mỗi em một ngôi nhà yêu thương, nơi các em được chơi, được học, và lớn lên trong tình cảm ấm áp, quan tâm và chia sẻ.",
-        "Wisdom": "Trí Tuệ",
-        "Let love be guided by wisdom, so that children are nurtured in both material care and the capacity for a happy, meaningful life.":
-            "Để tình yêu thương được soi sáng bởi trí tuệ, giúp các em được nuôi dưỡng cả về vật chất lẫn khả năng sống hạnh phúc và ý nghĩa.",
-        "Safety & Hope": "An toàn & Hy vọng",
-        "Offer children who need protection the chance to grow up in safety, warmth, and hope.":
-            "Mang đến cho những em bé cần được chở che cơ hội lớn lên trong sự an toàn, ấm áp và hy vọng.",
+        "Responsibility": "Trách nhiệm",
+        "Speak and act in line with our commitments, work wholeheartedly, and place the children's best interests above all in everything we do.":
+            "Nói, hành động đúng như cam kết, làm việc tâm huyết và đề cao lợi ích của trẻ trong mọi công việc mình làm.",
+        "Understanding": "Thấu hiểu",
+        "Understand each child's needs and feelings so that they can grow up happy and healthy.":
+            "Thấu hiểu nhu cầu, cảm xúc của trẻ để giúp trẻ phát triển hạnh phúc và lành mạnh.",
 
         # ---- Founding Council ----
         "Click on a council member's photo to learn more about their background and contributions to Tuệ Quang Children.":
