@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, url_for
+from flask import Flask, request, url_for
 from flask_wtf.csrf import CSRFProtect
 
 try:
@@ -10,6 +10,8 @@ try:
 except ImportError:
     pass
 
+import auth
+import content_index
 import content_store
 import i18n
 from routes import register_blueprints
@@ -48,6 +50,19 @@ def create_app():
     @app.context_processor
     def _inject_versioned_url_for():
         return {"url_for": versioned_url_for}
+
+    @app.context_processor
+    def _inject_editor_bar():
+        """Signed-in staff see a bar on the public site linking straight to the
+        editor screen for whichever page they are looking at."""
+        if not auth.current_user() or request.blueprint == "admin":
+            return {"editor_user": None, "editor_edit_url": None}
+        templates_root = os.path.join(app.root_path, app.template_folder)
+        key = content_index.key_for_path(templates_root, request.path)
+        return {
+            "editor_user": auth.current_user(),
+            "editor_edit_url": url_for("admin.edit_page", key=key) if key else None,
+        }
 
     return app
 

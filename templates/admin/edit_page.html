@@ -1,0 +1,231 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ _(page.label) }}{% endblock %}
+
+{% macro item_field(field, index, value) %}
+    {% set field_id = "item-" ~ index ~ "-" ~ field.name %}
+    <label class="form-label small fw-semibold" for="{{ field_id }}">{{ _(field.label) }}</label>
+    {% if field.type == "textarea" %}
+    <textarea class="form-control" id="{{ field_id }}" name="{{ field_id }}" rows="3">{{ value }}</textarea>
+    {% elif field.type == "image" %}
+    <input type="text" class="form-control" id="{{ field_id }}" name="{{ field_id }}" value="{{ value }}"
+           list="admin-photo-options" placeholder="/static/img/example.png">
+    <div class="form-text">{{ _("Start typing to pick one of your photos.") }}</div>
+    {% else %}
+    <input type="text" class="form-control" id="{{ field_id }}" name="{{ field_id }}" value="{{ value }}">
+    {% endif %}
+{% endmacro %}
+
+{% block content %}
+<a class="back-link" href="{{ url_for('admin.pages') }}"><i class="bi bi-arrow-left me-1"></i>{{ _("All pages") }}</a>
+
+<div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mt-2 mb-4">
+    <div>
+        <h1 class="h3 mb-1">{{ _(page.label) }}</h1>
+        <p class="text-muted mb-0">
+            {% if page.note %}{{ _(page.note) }}{% else %}{{ _("Change the wording below, then save.") }}{% endif %}
+        </p>
+    </div>
+    <div class="d-flex gap-2">
+        {% if page.preview %}
+        <a href="{{ page.preview }}" class="btn btn-outline-secondary">
+            <i class="bi bi-eye me-1"></i>{{ _("See this page") }}
+        </a>
+        {% endif %}
+        <form method="post" action="{{ url_for('admin.restore_page', key=page.key) }}"
+              onsubmit="return confirm('{{ _("Undo all your changes on this page and go back to the original wording?") }}');">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button type="submit" class="btn btn-outline-danger">{{ _("Undo My Changes") }}</button>
+        </form>
+    </div>
+</div>
+
+<datalist id="admin-photo-options">
+    {% for photo in photos %}
+    <option value="/static/img/{{ photo.name }}"></option>
+    {% endfor %}
+</datalist>
+
+<form method="post" id="admin-page-form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+    <div class="editor-help mb-4">
+        <p class="mb-0 small">
+            <i class="bi bi-info-circle me-1"></i>
+            {{ _("Every piece of wording on this page is listed below, in the order it appears. Type in a box to change it, and leave the rest alone.") }}
+        </p>
+    </div>
+
+    <div class="text-rows">
+        {% for row in rows %}
+        <div class="text-row">
+            <div class="text-row-head">
+                <span class="text-row-number">{{ loop.index }}</span>
+                <span class="text-row-role">{{ _(row.role) }}</span>
+                {% if row.changed %}<span class="badge bg-success-subtle text-success-emphasis">{{ _("Edited") }}</span>{% endif %}
+                {% if row.shared %}<span class="text-row-hint"><i class="bi bi-link-45deg"></i>{{ _("Also shown on other pages") }}</span>{% endif %}
+            </div>
+            <input type="hidden" name="source-{{ loop.index0 }}" value="{{ row.source }}">
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <label class="form-label small fw-semibold" for="en-{{ loop.index0 }}">English</label>
+                    {% if row.long %}
+                    <textarea class="form-control" id="en-{{ loop.index0 }}" name="en-{{ loop.index0 }}" rows="3">{{ row.english }}</textarea>
+                    {% else %}
+                    <input type="text" class="form-control" id="en-{{ loop.index0 }}" name="en-{{ loop.index0 }}" value="{{ row.english }}">
+                    {% endif %}
+                </div>
+                <div class="col-lg-6">
+                    <label class="form-label small fw-semibold" for="vi-{{ loop.index0 }}">Tiếng Việt</label>
+                    {% if row.long %}
+                    <textarea class="form-control" id="vi-{{ loop.index0 }}" name="vi-{{ loop.index0 }}" rows="3">{{ row.vietnamese }}</textarea>
+                    {% else %}
+                    <input type="text" class="form-control" id="vi-{{ loop.index0 }}" name="vi-{{ loop.index0 }}" value="{{ row.vietnamese }}">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% if collection_name %}
+    <h2 class="section-heading mt-5">{{ _(collection.label) }}</h2>
+    <p class="text-muted">{{ _(collection.description) }}</p>
+
+    <div id="admin-items">
+        {% for item in items %}
+        {% set index = loop.index0 %}
+        <div class="card mb-3 admin-item">
+            <div class="card-body">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <h3 class="h6 mb-0">{{ item[collection.title_field] or _("Untitled entry") }}</h3>
+                    <div class="btn-group btn-group-sm">
+                        <button type="button" class="btn btn-outline-secondary admin-move-up" title="{{ _("Move up") }}"><i class="bi bi-arrow-up"></i></button>
+                        <button type="button" class="btn btn-outline-secondary admin-move-down" title="{{ _("Move down") }}"><i class="bi bi-arrow-down"></i></button>
+                        <button type="button" class="btn btn-outline-danger admin-remove"><i class="bi bi-trash me-1"></i>{{ _("Remove") }}</button>
+                    </div>
+                </div>
+                <input type="hidden" name="item-{{ index }}-id" value="{{ item.id or '' }}">
+                <input type="hidden" class="admin-position" name="item-{{ index }}-position" value="{{ index }}">
+                <div class="row g-3">
+                    {% for field in collection.fields %}
+                    <div class="{{ 'col-12' if field.type == 'textarea' else 'col-md-6' }}">
+                        {{ item_field(field, index, item.get(field.name, '')) }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <button type="button" class="btn btn-outline-primary" id="admin-add-item">
+        <i class="bi bi-plus-lg me-1"></i>{{ _("Add another") }} {{ _(collection.item_name) }}
+    </button>
+    {% endif %}
+
+    <div class="admin-save-bar">
+        <span class="save-bar-hint d-none d-md-inline">{{ _("Changes go live as soon as you save.") }}</span>
+        <button type="submit" class="btn btn-primary btn-lg">{{ _("Save Changes") }}</button>
+    </div>
+</form>
+
+{% if collection_name %}
+<template id="admin-item-template">
+    <div class="card mb-3 admin-item">
+        <div class="card-body">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                <h3 class="h6 mb-0">{{ _("New entry") }}</h3>
+                <div class="btn-group btn-group-sm">
+                    <button type="button" class="btn btn-outline-secondary admin-move-up" title="{{ _("Move up") }}"><i class="bi bi-arrow-up"></i></button>
+                    <button type="button" class="btn btn-outline-secondary admin-move-down" title="{{ _("Move down") }}"><i class="bi bi-arrow-down"></i></button>
+                    <button type="button" class="btn btn-outline-danger admin-remove"><i class="bi bi-trash me-1"></i>{{ _("Remove") }}</button>
+                </div>
+            </div>
+            <input type="hidden" name="item-__INDEX__-id" value="">
+            <input type="hidden" class="admin-position" name="item-__INDEX__-position" value="__INDEX__">
+            <div class="row g-3">
+                {% for field in collection.fields %}
+                <div class="{{ 'col-12' if field.type == 'textarea' else 'col-md-6' }}">
+                    <label class="form-label small fw-semibold">{{ _(field.label) }}</label>
+                    {% if field.type == "textarea" %}
+                    <textarea class="form-control" name="item-__INDEX__-{{ field.name }}" rows="3"></textarea>
+                    {% elif field.type == "image" %}
+                    <input type="text" class="form-control" name="item-__INDEX__-{{ field.name }}"
+                           list="admin-photo-options" placeholder="/static/img/example.png">
+                    {% else %}
+                    <input type="text" class="form-control" name="item-__INDEX__-{{ field.name }}">
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</template>
+{% endif %}
+{% endblock %}
+
+{% block extra_scripts %}
+{% if collection_name %}
+<script>
+(function () {
+    const list = document.getElementById('admin-items');
+    const template = document.getElementById('admin-item-template');
+    const form = document.getElementById('admin-page-form');
+    const removeMessage = {{ _("Remove this entry from the website?")|tojson }};
+    let nextIndex = {{ items|length }};
+
+    // The saved order follows the cards on screen, so every move rewrites the
+    // positions immediately rather than waiting for the form to be submitted.
+    function renumber() {
+        list.querySelectorAll('.admin-position').forEach(function (input, position) {
+            input.value = position;
+        });
+    }
+
+    function bind(card) {
+        card.querySelector('.admin-move-up').addEventListener('click', function () {
+            const previous = card.previousElementSibling;
+            if (previous) {
+                list.insertBefore(card, previous);
+                card.scrollIntoView({ block: 'nearest' });
+                renumber();
+            }
+        });
+        card.querySelector('.admin-move-down').addEventListener('click', function () {
+            const next = card.nextElementSibling;
+            if (next) {
+                list.insertBefore(next, card);
+                card.scrollIntoView({ block: 'nearest' });
+                renumber();
+            }
+        });
+        card.querySelector('.admin-remove').addEventListener('click', function () {
+            if (confirm(removeMessage)) {
+                card.remove();
+                renumber();
+            }
+        });
+    }
+
+    list.querySelectorAll('.admin-item').forEach(bind);
+
+    document.getElementById('admin-add-item').addEventListener('click', function () {
+        const holder = document.createElement('div');
+        holder.innerHTML = template.innerHTML.replace(/__INDEX__/g, nextIndex).trim();
+        const card = holder.firstElementChild;
+        list.appendChild(card);
+        bind(card);
+        renumber();
+        nextIndex += 1;
+        const firstInput = card.querySelector('input[type="text"], textarea');
+        if (firstInput) {
+            firstInput.focus();
+        }
+    });
+
+    form.addEventListener('submit', renumber);
+})();
+</script>
+{% endif %}
+{% endblock %}

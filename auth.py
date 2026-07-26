@@ -104,7 +104,8 @@ def login_required(view):
     def wrapped(*args, **kwargs):
         if not current_user():
             flash("Please sign in to continue.", "warning")
-            return redirect(url_for("admin.login", next=request.full_path))
+            target = request.full_path if request.query_string else request.path
+            return redirect(url_for("admin.login", next=target))
         return view(*args, **kwargs)
 
     return wrapped

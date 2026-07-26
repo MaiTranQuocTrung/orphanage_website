@@ -587,9 +587,9 @@ TRANSLATIONS = {
 
         # ---- Site editor (admin area) ----
         "Site Editor": "Trình chỉnh sửa Trang web",
-        "Page Text": "Nội dung Trang",
-        "Images": "Hình ảnh",
-        "View Site": "Xem trang web",
+        "Pages": "Các trang",
+        "Photos": "Hình ảnh",
+        "View Website": "Xem trang web",
         "Sign In": "Đăng nhập",
         "Sign Out": "Đăng xuất",
         "Sign in to edit the website content.": "Đăng nhập để chỉnh sửa nội dung trang web.",
@@ -598,63 +598,98 @@ TRANSLATIONS = {
         "Username": "Tên đăng nhập",
         "Password": "Mật khẩu",
         "Back to the website": "Quay lại trang web",
-        "Overview": "Tổng quan",
-        "Welcome back": "Chào mừng trở lại",
-        "Everything you change here goes live on the website straight away.":
-            "Mọi thay đổi tại đây sẽ hiển thị ngay trên trang web.",
-        "Reword any heading, paragraph, or button in English and Vietnamese.":
-            "Chỉnh sửa mọi tiêu đề, đoạn văn hay nút bấm bằng tiếng Anh và tiếng Việt.",
-        "pages": "trang",
-        "editable texts": "đoạn văn bản có thể sửa",
-        "Add, edit, reorder, or remove entries": "Thêm, sửa, sắp xếp hoặc xóa mục",
-        "Upload new photos or replace the ones already used on the site.":
-            "Tải lên ảnh mới hoặc thay thế những ảnh đang dùng trên trang web.",
-        "images": "hình ảnh",
-        "Your edits so far": "Các thay đổi của bạn",
-        "texts changed": "đoạn văn bản đã sửa",
-        "Choose a page to reword its headings, paragraphs, and buttons.":
-            "Chọn một trang để chỉnh sửa tiêu đề, đoạn văn và nút bấm.",
-        "edited": "đã sửa",
+
+        # Editor bar shown on the public site
+        "You are signed in as an editor": "Bạn đang đăng nhập với quyền chỉnh sửa",
+        "Edit this page": "Sửa trang này",
+        "Back to the editor": "Quay lại trình chỉnh sửa",
+
+        # Page list
+        "What would you like to change?": "Bạn muốn thay đổi điều gì?",
+        "Choose a page below to edit its wording. The list follows the website's own menu.":
+            "Chọn một trang bên dưới để sửa nội dung. Danh sách được sắp xếp theo đúng menu của trang web.",
+        "Every page": "Mọi trang",
+        "Not in the menu": "Không có trong menu",
+        "Menu & footer": "Menu & chân trang",
+        "Appears on every page of the website.": "Xuất hiện trên mọi trang của trang web.",
+        "things you can change": "nội dung có thể sửa",
         "Edited": "Đã sửa",
+        "Edit": "Sửa",
+        "Need to change a photo?": "Cần thay đổi hình ảnh?",
+        "Go to": "Vào mục",
+        "to upload a new picture or replace an existing one.":
+            "để tải lên ảnh mới hoặc thay thế ảnh hiện có.",
+
+        # Page editor
         "All pages": "Tất cả các trang",
-        "Leave a box unchanged to keep the current wording.":
-            "Giữ nguyên ô nếu bạn không muốn thay đổi nội dung hiện tại.",
-        "Preview": "Xem trước",
-        "Restore Original": "Khôi phục bản gốc",
-        "Restore the original wording for this page?": "Khôi phục nội dung gốc cho trang này?",
-        "Restore the original entries and discard your changes?":
-            "Khôi phục các mục gốc và bỏ mọi thay đổi của bạn?",
-        "Also used on other pages": "Cũng được dùng ở trang khác",
-        "Contains formatting tags": "Có chứa thẻ định dạng",
-        "English": "Tiếng Anh",
-        "Vietnamese": "Tiếng Việt",
+        "Change the wording below, then save.": "Sửa nội dung bên dưới rồi lưu lại.",
+        "See this page": "Xem trang này",
+        "Undo My Changes": "Hoàn tác thay đổi",
+        "Undo all your changes on this page and go back to the original wording?":
+            "Hoàn tác mọi thay đổi trên trang này và quay lại nội dung gốc?",
+        "Every piece of wording on this page is listed below, in the order it appears. Type in a box to change it, and leave the rest alone.":
+            "Toàn bộ nội dung của trang này được liệt kê bên dưới, theo đúng thứ tự hiển thị. Hãy nhập vào ô cần sửa và giữ nguyên những ô còn lại.",
+        "Also shown on other pages": "Cũng hiển thị ở trang khác",
+        "Changes go live as soon as you save.": "Thay đổi sẽ hiển thị ngay sau khi bạn lưu.",
         "Save Changes": "Lưu thay đổi",
-        "Shown on the Events page and the homepage.": "Hiển thị ở trang Sự kiện và trang chủ.",
-        "Shown on the Stories page and the homepage.": "Hiển thị ở trang Câu chuyện và trang chủ.",
-        "Member photos and profiles.": "Ảnh và tiểu sử thành viên.",
+
+        # What each text box is
+        "Browser tab title": "Tiêu đề trên thẻ trình duyệt",
+        "Page title": "Tiêu đề trang",
+        "Page subtitle": "Mô tả dưới tiêu đề",
+        "Heading": "Tiêu đề mục",
+        "Small heading": "Tiêu đề nhỏ",
+        "Paragraph": "Đoạn văn",
+        "List item": "Mục trong danh sách",
+        "Link": "Liên kết",
+        "Button": "Nút bấm",
+        "Form label": "Nhãn ô nhập",
+        "Dropdown choice": "Lựa chọn trong danh sách",
+        "Short text": "Chữ ngắn",
+        "Table cell": "Ô trong bảng",
+        "Table heading": "Tiêu đề cột",
+        "Caption": "Chú thích ảnh",
+        "Placeholder text": "Chữ gợi ý trong ô nhập",
+        "Image description": "Mô tả hình ảnh",
+        "Tooltip": "Chú thích khi rê chuột",
+        "Accessibility label": "Nhãn hỗ trợ tiếp cận",
+        "Text": "Chữ",
+
+        # Lists inside a page
+        "Council members": "Thành viên Hội đồng",
+        "These also appear on the homepage.": "Những mục này cũng hiển thị ở trang chủ.",
+        "Photos and profiles shown on this page.": "Ảnh và tiểu sử hiển thị trên trang này.",
+        "Add another": "Thêm",
+        "event": "sự kiện",
+        "story": "câu chuyện",
+        "member": "thành viên",
+        "Move up": "Chuyển lên",
+        "Move down": "Chuyển xuống",
+        "Remove": "Xóa",
+        "Remove this entry from the website?": "Xóa mục này khỏi trang web?",
+        "New entry": "Mục mới",
+        "Untitled entry": "Mục chưa có tên",
+        "Start typing to pick one of your photos.":
+            "Bắt đầu gõ để chọn một trong các ảnh của bạn.",
         "Title": "Tiêu đề",
         "Date": "Ngày",
         "Summary": "Tóm tắt",
         "Excerpt": "Trích dẫn",
         "Image": "Hình ảnh",
-        "Link": "Liên kết",
         "Biography": "Tiểu sử",
-        "Order": "Thứ tự",
-        "Delete": "Xóa",
-        "Add Entry": "Thêm mục",
-        "New entry": "Mục mới",
-        "Untitled entry": "Mục chưa có tên",
-        "Pick an uploaded image or paste a web address.":
-            "Chọn một ảnh đã tải lên hoặc dán địa chỉ web.",
-        "Replacing an image keeps its filename, so it updates everywhere it appears on the site.":
-            "Khi thay ảnh, tên tệp được giữ nguyên nên ảnh mới sẽ tự cập nhật ở mọi nơi trên trang web.",
-        "Upload an image": "Tải lên một ảnh",
-        "Image file": "Tệp ảnh",
-        "Replace an existing image": "Thay thế một ảnh hiện có",
-        "No — upload as a new image": "Không — tải lên như ảnh mới",
+
+        # Photos
+        "To change a picture that is already on the website, upload the new one and choose the old one under \"Replace\". It will update everywhere it appears.":
+            "Để thay một ảnh đang có trên trang web, hãy tải ảnh mới lên và chọn ảnh cũ ở mục \"Thay thế\". Ảnh sẽ được cập nhật ở mọi nơi.",
+        "Add a photo": "Thêm ảnh",
+        "Choose a file from your computer": "Chọn tệp từ máy tính của bạn",
+        "Replace": "Thay thế",
+        "Nothing — add it as a new photo": "Không — thêm như một ảnh mới",
         "Upload": "Tải lên",
-        "Delete this image? Pages using it will show a broken image.":
-            "Xóa ảnh này? Những trang đang dùng ảnh sẽ bị lỗi hiển thị.",
+        "Photos on the website": "Ảnh trên trang web",
+        "Delete": "Xóa",
+        "Delete this photo? Any page using it will show a blank space.":
+            "Xóa ảnh này? Những trang đang dùng ảnh sẽ bị trống chỗ.",
 
         # ---- Site editor messages ----
         "Please sign in to continue.": "Vui lòng đăng nhập để tiếp tục.",
@@ -664,15 +699,13 @@ TRANSLATIONS = {
             "Chưa có tài khoản chỉnh sửa nào. Xem README.md để biết các bước thiết lập.",
         "Your changes have been saved.": "Các thay đổi đã được lưu.",
         "No changes to save.": "Không có thay đổi nào để lưu.",
-        "The original wording has been restored.": "Nội dung gốc đã được khôi phục.",
-        "This page was already using the original wording.": "Trang này vốn đã dùng nội dung gốc.",
-        "The original entries have been restored.": "Các mục gốc đã được khôi phục.",
-        "This list was already using the original entries.": "Danh sách này vốn đã dùng các mục gốc.",
+        "The original content has been restored.": "Nội dung gốc đã được khôi phục.",
+        "This page was already showing its original content.":
+            "Trang này vốn đã hiển thị nội dung gốc.",
         "That page could not be found.": "Không tìm thấy trang này.",
-        "That content list could not be found.": "Không tìm thấy danh sách nội dung này.",
-        "That image could not be found.": "Không tìm thấy ảnh này.",
-        "Please choose an image file to upload.": "Vui lòng chọn một tệp ảnh để tải lên.",
-        "Only PNG, JPG, WEBP, GIF, and SVG images can be uploaded.":
+        "That photo could not be found.": "Không tìm thấy ảnh này.",
+        "Please choose a photo to upload.": "Vui lòng chọn một ảnh để tải lên.",
+        "Only PNG, JPG, WEBP, GIF, and SVG photos can be uploaded.":
             "Chỉ có thể tải lên ảnh định dạng PNG, JPG, WEBP, GIF và SVG.",
     }
 }

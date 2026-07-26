@@ -37,6 +37,23 @@ a:hover {
     color: var(--color-primary-dark);
 }
 
+/* Editor bar (only visible to signed-in staff) */
+.editor-bar {
+    background: #1b4332;
+    color: #fff;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.editor-bar-label {
+    font-weight: 600;
+}
+
+.editor-bar .btn-light {
+    color: #1b4332;
+    font-weight: 600;
+}
+
 /* Navigation */
 .site-nav {
     background: rgba(255, 255, 255, 0.97);

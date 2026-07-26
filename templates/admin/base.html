@@ -13,7 +13,7 @@
     {% if admin_user %}
     <nav class="navbar navbar-expand-lg admin-navbar">
         <div class="container-xl">
-            <a class="navbar-brand" href="{{ url_for('admin.dashboard') }}">
+            <a class="navbar-brand" href="{{ url_for('admin.pages') }}">
                 <i class="bi bi-pencil-square me-2"></i>{{ _("Site Editor") }}
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNav">
@@ -22,21 +22,20 @@
             <div class="collapse navbar-collapse" id="adminNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.endpoint in ('admin.text_pages', 'admin.edit_text') %}active{% endif %}" href="{{ url_for('admin.text_pages') }}">{{ _("Page Text") }}</a>
+                        <a class="nav-link {% if request.endpoint in ('admin.pages', 'admin.edit_page') %}active{% endif %}" href="{{ url_for('admin.pages') }}">
+                            <i class="bi bi-file-text me-1"></i>{{ _("Pages") }}
+                        </a>
                     </li>
-                    {% for key, item in collections.items() %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.view_args and request.view_args.get('name') == key %}active{% endif %}" href="{{ url_for('admin.edit_collection', name=key) }}">{{ _(item.label) }}</a>
-                    </li>
-                    {% endfor %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.endpoint == 'admin.images' %}active{% endif %}" href="{{ url_for('admin.images') }}">{{ _("Images") }}</a>
+                        <a class="nav-link {% if request.endpoint == 'admin.photos' %}active{% endif %}" href="{{ url_for('admin.photos') }}">
+                            <i class="bi bi-images me-1"></i>{{ _("Photos") }}
+                        </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('home.index') }}" target="_blank" rel="noopener">
-                            <i class="bi bi-box-arrow-up-right me-1"></i>{{ _("View Site") }}
+                        <a class="nav-link" href="{{ url_for('home.index') }}">
+                            <i class="bi bi-eye me-1"></i>{{ _("View Website") }}
                         </a>
                     </li>
                     <li class="nav-item dropdown">

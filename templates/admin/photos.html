@@ -1,0 +1,58 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ _("Photos") }}{% endblock %}
+
+{% block content %}
+<div class="editor-intro mb-4">
+    <h1 class="h3 mb-2">{{ _("Photos") }}</h1>
+    <p class="text-muted mb-0">{{ _("To change a picture that is already on the website, upload the new one and choose the old one under \"Replace\". It will update everywhere it appears.") }}</p>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h2 class="h6 mb-3">{{ _("Add a photo") }}</h2>
+        <form method="post" enctype="multipart/form-data" class="row g-3 align-items-end">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <div class="col-md-5">
+                <label for="image" class="form-label">{{ _("Choose a file from your computer") }}</label>
+                <input type="file" class="form-control" id="image" name="image" accept=".png,.jpg,.jpeg,.webp,.gif,.svg" required>
+            </div>
+            <div class="col-md-4">
+                <label for="replace" class="form-label">{{ _("Replace") }}</label>
+                <select class="form-select" id="replace" name="replace">
+                    <option value="">{{ _("Nothing — add it as a new photo") }}</option>
+                    {% for photo in photos %}
+                    <option value="{{ photo.name }}">{{ photo.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary w-100">{{ _("Upload") }}</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<h2 class="section-heading">{{ _("Photos on the website") }}</h2>
+<div class="row g-4">
+    {% for photo in photos %}
+    <div class="col-6 col-md-4 col-xl-3">
+        <div class="card h-100 admin-image-card">
+            <div class="admin-image-thumb">
+                <img src="{{ url_for('static', filename='img/' ~ photo.name) }}" alt="{{ photo.name }}">
+            </div>
+            <div class="card-body">
+                <p class="small fw-semibold text-truncate mb-1" title="{{ photo.name }}">{{ photo.name }}</p>
+                <p class="small text-muted mb-2">{{ photo.size_kb }} KB</p>
+                <form method="post" action="{{ url_for('admin.delete_photo') }}"
+                      onsubmit="return confirm('{{ _("Delete this photo? Any page using it will show a blank space.") }}');">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="filename" value="{{ photo.name }}">
+                    <button type="submit" class="btn btn-sm btn-outline-danger w-100">{{ _("Delete") }}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

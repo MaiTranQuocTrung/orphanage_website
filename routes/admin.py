@@ -1,9 +1,10 @@
 """Password-protected editing area for the shelter's own staff.
 
-Nothing here writes to the templates. Text edits are stored as overrides
-keyed by the original English wording, and lists such as events or stories
-are stored as whole collections, so the site can always fall back to the
-content that ships in the code.
+The editor is organised around the pages of the website: pick a page, change
+its wording and its entries, save. Nothing here writes to the templates. Text
+edits are stored as overrides keyed by the original English wording, and lists
+such as events or stories are stored as whole collections, so the site can
+always fall back to the content that ships in the code.
 """
 
 import os
@@ -16,8 +17,6 @@ from flask import (
     redirect,
     render_template,
     request,
-    send_from_directory,
-    session,
     url_for,
 )
 from werkzeug.utils import secure_filename
@@ -45,10 +44,7 @@ def _images_dir():
 
 @admin_bp.context_processor
 def _inject_admin_context():
-    return {
-        "admin_user": auth.current_user(),
-        "collections": site_content.COLLECTIONS,
-    }
+    return {"admin_user": auth.current_user()}
 
 
 # ------------------------------------------------------------------ sign in
@@ -56,7 +52,7 @@ def _inject_admin_context():
 @admin_bp.route("/login", methods=["GET", "POST"])
 def login():
     if auth.current_user():
-        return redirect(url_for("admin.dashboard"))
+        return redirect(url_for("admin.pages"))
 
     if request.method == "POST":
         locked = auth.lockout_remaining()
@@ -65,9 +61,9 @@ def login():
         elif not auth.is_configured():
             flash("No editor account is set up yet. See README.md for the setup steps.", "warning")
         elif auth.attempt_login(request.form.get("username"), request.form.get("password")):
-            destination = request.args.get("next") or url_for("admin.dashboard")
+            destination = request.args.get("next") or url_for("admin.pages")
             if not destination.startswith("/"):
-                destination = url_for("admin.dashboard")
+                destination = url_for("admin.pages")
             return redirect(destination)
         else:
             flash("Incorrect username or password.", "danger")
@@ -83,138 +79,117 @@ def logout():
     return redirect(url_for("admin.login"))
 
 
-# ----------------------------------------------------------------- overview
+# ---------------------------------------------------------------- page list
 
 @admin_bp.route("/")
 @auth.login_required
-def dashboard():
-    pages = content_index.get_pages(_templates_root())
-    store = content_store.load()
-    edited_text = store.get("text", {})
-    return render_template(
-        "admin/dashboard.html",
-        page_count=len(pages),
-        string_count=sum(len(page["strings"]) for page in pages),
-        edited_counts={lang: len(values) for lang, values in edited_text.items() if values},
-        image_count=len(_list_images()),
-    )
-
-
-# --------------------------------------------------------------- page text
-
-@admin_bp.route("/text")
-@auth.login_required
-def text_pages():
+def pages():
     root = _templates_root()
-    pages = content_index.get_pages(root)
-    store = content_store.load().get("text", {})
-    summary = []
-    for page in pages:
-        edits = sum(
-            1
-            for text in page["strings"]
-            for lang in ("en", "vi")
-            if text in store.get(lang, {})
-        )
-        summary.append({**page, "edits": edits})
-    return render_template("admin/text_pages.html", pages=summary)
+    edits = content_store.load().get("text", {})
+    sections = []
+    for section in content_index.get_sections(root):
+        entries = []
+        for page in section["pages"]:
+            changed = sum(
+                1
+                for text in page["strings"]
+                for lang in ("en", "vi")
+                if text in edits.get(lang, {})
+            )
+            name, _config = site_content.collection_for_page(page["key"])
+            entries.append({**page, "changed": changed, "collection": name})
+        sections.append({"label": section["label"], "pages": entries})
+    return render_template("admin/pages.html", sections=sections)
 
 
-@admin_bp.route("/text/<path:key>", methods=["GET", "POST"])
+# -------------------------------------------------------------- page editor
+
+@admin_bp.route("/page/<path:key>", methods=["GET", "POST"])
 @auth.login_required
-def edit_text(key):
+def edit_page(key):
     root = _templates_root()
     page = content_index.get_page(root, key)
     if page is None:
         flash("That page could not be found.", "danger")
-        return redirect(url_for("admin.text_pages"))
+        return redirect(url_for("admin.pages"))
+
+    collection_name, collection = site_content.collection_for_page(key)
 
     if request.method == "POST":
-        edits = {"en": {}, "vi": {}}
-        for index, source in enumerate(page["strings"]):
-            if request.form.get(f"source-{index}") != source:
-                continue
-            english = (request.form.get(f"en-{index}") or "").strip()
-            vietnamese = (request.form.get(f"vi-{index}") or "").strip()
-            # Storing a value identical to the shipped wording would just be
-            # noise, so treat "unchanged" as "no override".
-            edits["en"][source] = "" if english == source else english
-            shipped_vi = TRANSLATIONS.get("vi", {}).get(source, "")
-            edits["vi"][source] = "" if vietnamese == shipped_vi else vietnamese
-        changed = content_store.set_texts("en", edits["en"])
-        changed = content_store.set_texts("vi", edits["vi"]) or changed
-        flash("Your changes have been saved." if changed else "No changes to save.", "success" if changed else "info")
-        return redirect(url_for("admin.edit_text", key=key))
+        changed = _save_text(page)
+        if collection_name:
+            items = site_content.assign_ids(collection_name, _parse_collection_form(collection))
+            if items != site_content.get_items(collection_name):
+                site_content.save_items(collection_name, items)
+                changed = True
+        flash("Your changes have been saved." if changed else "No changes to save.",
+              "success" if changed else "info")
+        return redirect(url_for("admin.edit_page", key=key))
 
     overrides_en = content_store.get_text("en")
     overrides_vi = content_store.get_text("vi")
     counts = content_index.usage_counts(root)
     rows = []
-    for source in page["strings"]:
+    for entry in page["entries"]:
+        source = entry["text"]
         rows.append(
             {
                 "source": source,
+                "role": entry["role"],
                 "english": overrides_en.get(source, source),
                 "vietnamese": overrides_vi.get(source, TRANSLATIONS.get("vi", {}).get(source, "")),
-                "edited": source in overrides_en or source in overrides_vi,
+                "changed": source in overrides_en or source in overrides_vi,
                 "shared": counts.get(source, 1) > 1,
-                "html": "<" in source,
+                "long": len(source) > 90,
             }
         )
-    return render_template("admin/edit_text.html", page=page, rows=rows)
-
-
-@admin_bp.route("/text/<path:key>/reset", methods=["POST"])
-@auth.login_required
-def reset_text(key):
-    page = content_index.get_page(_templates_root(), key)
-    if page is None:
-        flash("That page could not be found.", "danger")
-        return redirect(url_for("admin.text_pages"))
-    if content_store.clear_texts(page["strings"]):
-        flash("The original wording has been restored.", "success")
-    else:
-        flash("This page was already using the original wording.", "info")
-    return redirect(url_for("admin.edit_text", key=key))
-
-
-# --------------------------------------------------------------- collections
-
-@admin_bp.route("/content/<name>", methods=["GET", "POST"])
-@auth.login_required
-def edit_collection(name):
-    config = site_content.COLLECTIONS.get(name)
-    if config is None:
-        flash("That content list could not be found.", "danger")
-        return redirect(url_for("admin.dashboard"))
-
-    if request.method == "POST":
-        items = _parse_collection_form(config)
-        site_content.save_items(name, items)
-        flash("Your changes have been saved.", "success")
-        return redirect(url_for("admin.edit_collection", name=name))
 
     return render_template(
-        "admin/edit_collection.html",
-        name=name,
-        config=config,
-        items=site_content.get_items(name),
-        edited=site_content.is_edited(name),
-        images=_list_images(),
+        "admin/edit_page.html",
+        page=page,
+        rows=rows,
+        collection_name=collection_name,
+        collection=collection,
+        items=site_content.get_items(collection_name) if collection_name else [],
+        collection_changed=site_content.is_edited(collection_name) if collection_name else False,
+        photos=_list_photos(),
     )
 
 
-@admin_bp.route("/content/<name>/reset", methods=["POST"])
+def _save_text(page):
+    edits = {"en": {}, "vi": {}}
+    for index, source in enumerate(page["strings"]):
+        if request.form.get(f"source-{index}") != source:
+            continue
+        english = (request.form.get(f"en-{index}") or "").strip()
+        vietnamese = (request.form.get(f"vi-{index}") or "").strip()
+        # Storing a value identical to the shipped wording would just be
+        # noise, so treat "unchanged" as "no override".
+        edits["en"][source] = "" if english == source else english
+        shipped_vi = TRANSLATIONS.get("vi", {}).get(source, "")
+        edits["vi"][source] = "" if vietnamese == shipped_vi else vietnamese
+    changed = content_store.set_texts("en", edits["en"])
+    return content_store.set_texts("vi", edits["vi"]) or changed
+
+
+@admin_bp.route("/page/<path:key>/restore", methods=["POST"])
 @auth.login_required
-def reset_collection(name):
-    if name not in site_content.COLLECTIONS:
-        flash("That content list could not be found.", "danger")
-        return redirect(url_for("admin.dashboard"))
-    if site_content.reset_items(name):
-        flash("The original entries have been restored.", "success")
-    else:
-        flash("This list was already using the original entries.", "info")
-    return redirect(url_for("admin.edit_collection", name=name))
+def restore_page(key):
+    page = content_index.get_page(_templates_root(), key)
+    if page is None:
+        flash("That page could not be found.", "danger")
+        return redirect(url_for("admin.pages"))
+
+    restored = content_store.clear_texts(page["strings"])
+    collection_name, _config = site_content.collection_for_page(key)
+    if collection_name and site_content.reset_items(collection_name):
+        restored = True
+    flash(
+        "The original content has been restored." if restored
+        else "This page was already showing its original content.",
+        "success" if restored else "info",
+    )
+    return redirect(url_for("admin.edit_page", key=key))
 
 
 def _parse_collection_form(config):
@@ -255,13 +230,13 @@ def _coerce_id(raw):
     return int(raw) if raw.isdigit() else raw
 
 
-# -------------------------------------------------------------------- images
+# -------------------------------------------------------------------- photos
 
-def _list_images():
+def _list_photos():
     directory = _images_dir()
     if not os.path.isdir(directory):
         return []
-    images = []
+    photos = []
     for name in sorted(os.listdir(directory)):
         if os.path.splitext(name)[1].lower() not in ALLOWED_IMAGE_EXTENSIONS:
             continue
@@ -270,23 +245,23 @@ def _list_images():
             size = os.path.getsize(path)
         except OSError:
             continue
-        images.append({"name": name, "size_kb": round(size / 1024)})
-    return images
+        photos.append({"name": name, "size_kb": round(size / 1024)})
+    return photos
 
 
-@admin_bp.route("/images", methods=["GET", "POST"])
+@admin_bp.route("/photos", methods=["GET", "POST"])
 @auth.login_required
-def images():
+def photos():
     if request.method == "POST":
         _handle_upload()
-        return redirect(url_for("admin.images"))
-    return render_template("admin/images.html", images=_list_images())
+        return redirect(url_for("admin.photos"))
+    return render_template("admin/photos.html", photos=_list_photos())
 
 
 def _handle_upload():
     upload = request.files.get("image")
     if upload is None or not upload.filename:
-        flash("Please choose an image file to upload.", "warning")
+        flash("Please choose a photo to upload.", "warning")
         return
 
     replace_target = (request.form.get("replace") or "").strip()
@@ -296,7 +271,7 @@ def _handle_upload():
         source_extension = os.path.splitext(upload.filename)[1].lower()
         if source_extension != target_extension:
             flash(
-                f"To replace {filename} the new file must also be a {target_extension} image.",
+                f"To replace {filename} the new photo must also be a {target_extension} file.",
                 "danger",
             )
             return
@@ -305,7 +280,7 @@ def _handle_upload():
 
     extension = os.path.splitext(filename)[1].lower()
     if extension not in ALLOWED_IMAGE_EXTENSIONS:
-        flash("Only PNG, JPG, WEBP, GIF, and SVG images can be uploaded.", "danger")
+        flash("Only PNG, JPG, WEBP, GIF, and SVG photos can be uploaded.", "danger")
         return
 
     directory = _images_dir()
@@ -313,7 +288,7 @@ def _handle_upload():
     destination = os.path.join(directory, filename)
     if os.path.exists(destination) and not replace_target:
         flash(
-            f"{filename} already exists. Use the replace option if you meant to update it.",
+            f"{filename} already exists. Choose it under \"Replace\" if you meant to update it.",
             "warning",
         )
         return
@@ -322,14 +297,14 @@ def _handle_upload():
     flash(f"{filename} has been saved.", "success")
 
 
-@admin_bp.route("/images/delete", methods=["POST"])
+@admin_bp.route("/photos/delete", methods=["POST"])
 @auth.login_required
-def delete_image():
+def delete_photo():
     filename = secure_filename(request.form.get("filename", ""))
     path = os.path.join(_images_dir(), filename)
     if filename and os.path.isfile(path):
         os.remove(path)
         flash(f"{filename} has been deleted.", "success")
     else:
-        flash("That image could not be found.", "danger")
-    return redirect(url_for("admin.images"))
+        flash("That photo could not be found.", "danger")
+    return redirect(url_for("admin.photos"))

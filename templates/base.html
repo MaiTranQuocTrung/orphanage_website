@@ -13,6 +13,19 @@
     {% block extra_head %}{% endblock %}
 </head>
 <body>
+    {# editor-only:start #}
+    {% if editor_user %}
+    <div class="editor-bar">
+        <div class="container d-flex flex-wrap align-items-center gap-2">
+            <span class="editor-bar-label"><i class="bi bi-pencil-square me-1"></i>{{ _("You are signed in as an editor") }}</span>
+            {% if editor_edit_url %}
+            <a class="btn btn-sm btn-light" href="{{ editor_edit_url }}">{{ _("Edit this page") }}</a>
+            {% endif %}
+            <a class="btn btn-sm btn-outline-light ms-auto" href="{{ url_for('admin.pages') }}">{{ _("Back to the editor") }}</a>
+        </div>
+    </div>
+    {% endif %}
+    {# editor-only:end #}
     <nav class="navbar navbar-expand-lg navbar-light site-nav sticky-top">
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('home.index') }}">

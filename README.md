@@ -67,10 +67,15 @@ python app.py
 
 ## Site Editor
 
-Shelter staff can change the website's wording, lists, and photos from
+Shelter staff can change the website from
 [http://127.0.0.1:5000/admin](http://127.0.0.1:5000/admin) — no code, no
-redeploy. The editor is available in English and Vietnamese, and the language
-switcher in its top bar works exactly like the one on the public site.
+redeploy. There are only two screens: **Pages** and **Photos**. The editor is
+available in English and Vietnamese, and the language switcher in its top bar
+works exactly like the one on the public site.
+
+While signed in, a green bar sits at the top of the public website with
+**Edit this page** and **Back to the editor**, so staff can hop between
+looking at a page and changing it.
 
 ### Setting up the account
 
@@ -97,13 +102,13 @@ Paste the printed `ADMIN_PASSWORD_HASH=...` line into `.env` and leave
 
 ### What can be edited
 
-- **Page text** — every heading, paragraph, and button on every page, in both
-  languages. The list is read straight from the templates, so copy added later
-  appears automatically.
-- **Events, Stories of Love, Founding Council** — add, edit, reorder, and
-  delete entries.
-- **Images** — upload new photos, or replace an existing one. Replacing keeps
-  the filename, so the new picture appears everywhere that image is used.
+- **Pages** — pick a page from a list that follows the website's own menu.
+  Every heading, paragraph, and button on that page can be rewritten in both
+  languages. Pages that have a list (Events, Stories, Founding Council) show
+  those entries on the same screen, so staff can add, reorder, or remove them
+  without leaving the page.
+- **Photos** — upload a new picture, or replace an existing one. Replacing
+  keeps the filename, so the new picture appears everywhere that image is used.
 
 ### How edits are stored
 
@@ -113,7 +118,7 @@ by its original English wording, so nothing in the templates has to change.
 
 That means:
 
-- Every editor screen has a **Restore Original** button.
+- Every page has an **Undo My Changes** button.
 - Deleting `instance/content.json` resets the whole site to its shipped state.
 - The folder is git-ignored, so edits made on the server are never in conflict
   with a deployment.

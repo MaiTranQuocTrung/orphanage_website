@@ -13,7 +13,9 @@ from data import EVENTS, FOUNDING_COUNCIL, STORIES
 COLLECTIONS = {
     "events": {
         "label": "Events",
-        "description": "Shown on the Events page and the homepage.",
+        "description": "These also appear on the homepage.",
+        "item_name": "event",
+        "page": "events/events.html",
         "default": EVENTS,
         "id_prefix": None,
         "title_field": "title",
@@ -26,8 +28,10 @@ COLLECTIONS = {
         ],
     },
     "stories": {
-        "label": "Stories of Love",
-        "description": "Shown on the Stories page and the homepage.",
+        "label": "Stories",
+        "description": "These also appear on the homepage.",
+        "item_name": "story",
+        "page": "events/stories.html",
         "default": STORIES,
         "id_prefix": None,
         "title_field": "title",
@@ -40,8 +44,10 @@ COLLECTIONS = {
         ],
     },
     "council": {
-        "label": "Founding Council",
-        "description": "Member photos and profiles.",
+        "label": "Council members",
+        "description": "Photos and profiles shown on this page.",
+        "item_name": "member",
+        "page": "about/council.html",
         "default": FOUNDING_COUNCIL,
         "id_prefix": "council-",
         "title_field": "name",
@@ -53,6 +59,14 @@ COLLECTIONS = {
         ],
     },
 }
+
+
+def collection_for_page(page_key):
+    """The editable list that belongs on a page, if it has one."""
+    for name, config in COLLECTIONS.items():
+        if config["page"] == page_key:
+            return name, config
+    return None, None
 
 
 def get_items(name):

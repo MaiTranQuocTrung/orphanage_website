@@ -1,0 +1,41 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ _("Pages") }}{% endblock %}
+
+{% block content %}
+<div class="editor-intro mb-4">
+    <h1 class="h3 mb-2">{{ _("What would you like to change?") }}</h1>
+    <p class="text-muted mb-0">{{ _("Choose a page below to edit its wording. The list follows the website's own menu.") }}</p>
+</div>
+
+{% for section in sections %}
+<h2 class="section-heading">{{ _(section.label) }}</h2>
+<div class="row g-3 mb-4">
+    {% for page in section.pages %}
+    <div class="col-md-6 col-xl-4">
+        <a class="page-card" href="{{ url_for('admin.edit_page', key=page.key) }}">
+            <div class="page-card-body">
+                <div class="d-flex align-items-start justify-content-between gap-2">
+                    <span class="page-card-title">{{ _(page.label) }}</span>
+                    {% if page.changed %}<span class="badge bg-success-subtle text-success-emphasis">{{ _("Edited") }}</span>{% endif %}
+                </div>
+                <p class="page-card-note">
+                    {% if page.note %}{{ _(page.note) }}
+                    {% else %}{{ page.entries|length }} {{ _("things you can change") }}{% endif %}
+                </p>
+            </div>
+            <span class="page-card-action">{{ _("Edit") }} <i class="bi bi-arrow-right"></i></span>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
+
+<div class="editor-help">
+    <h2 class="h6 mb-2"><i class="bi bi-question-circle me-1"></i>{{ _("Need to change a photo?") }}</h2>
+    <p class="mb-0 small text-muted">
+        {{ _("Go to") }} <a href="{{ url_for('admin.photos') }}">{{ _("Photos") }}</a>
+        {{ _("to upload a new picture or replace an existing one.") }}
+    </p>
+</div>
+{% endblock %}
