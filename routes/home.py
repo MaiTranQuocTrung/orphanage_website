@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 
-from data import get_recent_events, get_recent_stories
+from site_content import get_recent_events, get_recent_stories
 
 home_bp = Blueprint("home", __name__)
 

@@ -7,6 +7,7 @@ fall back to the source text so nothing ever renders blank.
 
 from flask import session
 
+import content_store
 from translations import TRANSLATIONS
 
 LANGUAGES = {
@@ -24,10 +25,18 @@ def get_locale():
 
 
 def translate(text):
-    """Translate an English source string into the active language."""
+    """Render an English source string in the active language.
+
+    Text edited through the admin area wins over both the shipped Vietnamese
+    dictionary and the English source, so staff can reword any page without
+    touching the templates.
+    """
     if text is None:
         return text
     lang = get_locale()
+    edited = content_store.get_text(lang)
+    if text in edited:
+        return edited[text]
     if lang == DEFAULT_LANGUAGE:
         return text
     return TRANSLATIONS.get(lang, {}).get(text, text)

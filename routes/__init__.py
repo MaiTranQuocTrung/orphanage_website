@@ -1,6 +1,7 @@
 from flask import Flask
 
 from .about import about_bp
+from .admin import admin_bp
 from .children import children_bp
 from .events import events_bp
 from .governance import governance_bp
@@ -19,3 +20,4 @@ def register_blueprints(app: Flask) -> None:
     app.register_blueprint(policies_bp, url_prefix="/policies")
     app.register_blueprint(events_bp, url_prefix="/events")
     app.register_blueprint(support_bp, url_prefix="/support")
+    app.register_blueprint(admin_bp, url_prefix="/admin")

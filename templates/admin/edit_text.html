@@ -1,0 +1,64 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ page.label }}{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-4">
+    <div>
+        <a href="{{ url_for('admin.text_pages') }}" class="small text-muted"><i class="bi bi-chevron-left"></i> {{ _("All pages") }}</a>
+        <h1 class="h3 mb-1">{{ page.label }}</h1>
+        <p class="text-muted mb-0">{{ _("Leave a box unchanged to keep the current wording.") }}</p>
+    </div>
+    <div class="d-flex gap-2">
+        {% if page.preview %}
+        <a href="{{ page.preview }}" target="_blank" rel="noopener" class="btn btn-outline-secondary">
+            <i class="bi bi-box-arrow-up-right me-1"></i>{{ _("Preview") }}
+        </a>
+        {% endif %}
+        <form method="post" action="{{ url_for('admin.reset_text', key=page.key) }}"
+              onsubmit="return confirm('{{ _("Restore the original wording for this page?") }}');">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button type="submit" class="btn btn-outline-danger">{{ _("Restore Original") }}</button>
+        </form>
+    </div>
+</div>
+
+<form method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+    {% for row in rows %}
+    <div class="card mb-3 admin-text-row{% if row.edited %} admin-text-row-edited{% endif %}">
+        <div class="card-body">
+            <div class="d-flex flex-wrap gap-2 mb-2">
+                {% if row.edited %}<span class="badge text-bg-warning">{{ _("Edited") }}</span>{% endif %}
+                {% if row.shared %}<span class="badge text-bg-info">{{ _("Also used on other pages") }}</span>{% endif %}
+                {% if row.html %}<span class="badge text-bg-secondary">{{ _("Contains formatting tags") }}</span>{% endif %}
+            </div>
+            <input type="hidden" name="source-{{ loop.index0 }}" value="{{ row.source }}">
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <label class="form-label small text-uppercase text-muted" for="en-{{ loop.index0 }}">{{ _("English") }}</label>
+                    {% if row.source|length > 90 %}
+                    <textarea class="form-control" id="en-{{ loop.index0 }}" name="en-{{ loop.index0 }}" rows="4">{{ row.english }}</textarea>
+                    {% else %}
+                    <input type="text" class="form-control" id="en-{{ loop.index0 }}" name="en-{{ loop.index0 }}" value="{{ row.english }}">
+                    {% endif %}
+                </div>
+                <div class="col-lg-6">
+                    <label class="form-label small text-uppercase text-muted" for="vi-{{ loop.index0 }}">{{ _("Vietnamese") }}</label>
+                    {% if row.source|length > 90 %}
+                    <textarea class="form-control" id="vi-{{ loop.index0 }}" name="vi-{{ loop.index0 }}" rows="4">{{ row.vietnamese }}</textarea>
+                    {% else %}
+                    <input type="text" class="form-control" id="vi-{{ loop.index0 }}" name="vi-{{ loop.index0 }}" value="{{ row.vietnamese }}">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="admin-save-bar">
+        <button type="submit" class="btn btn-primary btn-lg">{{ _("Save Changes") }}</button>
+    </div>
+</form>
+{% endblock %}
