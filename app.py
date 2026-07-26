@@ -10,17 +10,24 @@ try:
 except ImportError:
     pass
 
+import content_store
 import i18n
 from routes import register_blueprints
 
 csrf = CSRFProtect()
 
+MAX_UPLOAD_BYTES = 8 * 1024 * 1024
+
 
 def create_app():
     app = Flask(__name__)
     app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "dev-secret-key-change-in-production")
+    app.config["MAX_CONTENT_LENGTH"] = MAX_UPLOAD_BYTES
+    app.config["SESSION_COOKIE_HTTPONLY"] = True
+    app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
 
     csrf.init_app(app)
+    content_store.init_app(app)
     i18n.init_app(app)
     register_blueprints(app)
 

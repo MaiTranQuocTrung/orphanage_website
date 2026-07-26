@@ -17,7 +17,6 @@ TRANSLATIONS = {
         "Tuệ Quang Children": "Trẻ Em Tuệ Quang",
         "Beneficiaries": "Đối tượng hỗ trợ",
         "Intake Process": "Quy trình Tiếp nhận",
-        "Governance": "Quản trị",
         "Shelter Policies": "Quy chế Mái ấm",
         "Operating Charter": "Quy chế Hoạt động",
         "Organization & Staffing": "Tổ chức & Nhân sự",
@@ -585,5 +584,95 @@ TRANSLATIONS = {
             "Vui lòng điền đầy đủ các trường bắt buộc và xác nhận mong muốn bảo trợ của bạn.",
         "Thank you for your sponsorship interest! Our team will reach out shortly.":
             "Cảm ơn bạn đã quan tâm bảo trợ! Đội ngũ của chúng tôi sẽ liên hệ trong thời gian sớm nhất.",
+
+        # ---- Site editor (admin area) ----
+        "Site Editor": "Trình chỉnh sửa Trang web",
+        "Page Text": "Nội dung Trang",
+        "Images": "Hình ảnh",
+        "View Site": "Xem trang web",
+        "Sign In": "Đăng nhập",
+        "Sign Out": "Đăng xuất",
+        "Sign in to edit the website content.": "Đăng nhập để chỉnh sửa nội dung trang web.",
+        "No editor account has been set up yet. Add ADMIN_USERNAME and ADMIN_PASSWORD to the .env file, then restart the site.":
+            "Chưa có tài khoản chỉnh sửa nào được thiết lập. Hãy thêm ADMIN_USERNAME và ADMIN_PASSWORD vào tệp .env, sau đó khởi động lại trang web.",
+        "Username": "Tên đăng nhập",
+        "Password": "Mật khẩu",
+        "Back to the website": "Quay lại trang web",
+        "Overview": "Tổng quan",
+        "Welcome back": "Chào mừng trở lại",
+        "Everything you change here goes live on the website straight away.":
+            "Mọi thay đổi tại đây sẽ hiển thị ngay trên trang web.",
+        "Reword any heading, paragraph, or button in English and Vietnamese.":
+            "Chỉnh sửa mọi tiêu đề, đoạn văn hay nút bấm bằng tiếng Anh và tiếng Việt.",
+        "pages": "trang",
+        "editable texts": "đoạn văn bản có thể sửa",
+        "Add, edit, reorder, or remove entries": "Thêm, sửa, sắp xếp hoặc xóa mục",
+        "Upload new photos or replace the ones already used on the site.":
+            "Tải lên ảnh mới hoặc thay thế những ảnh đang dùng trên trang web.",
+        "images": "hình ảnh",
+        "Your edits so far": "Các thay đổi của bạn",
+        "texts changed": "đoạn văn bản đã sửa",
+        "Choose a page to reword its headings, paragraphs, and buttons.":
+            "Chọn một trang để chỉnh sửa tiêu đề, đoạn văn và nút bấm.",
+        "edited": "đã sửa",
+        "Edited": "Đã sửa",
+        "All pages": "Tất cả các trang",
+        "Leave a box unchanged to keep the current wording.":
+            "Giữ nguyên ô nếu bạn không muốn thay đổi nội dung hiện tại.",
+        "Preview": "Xem trước",
+        "Restore Original": "Khôi phục bản gốc",
+        "Restore the original wording for this page?": "Khôi phục nội dung gốc cho trang này?",
+        "Restore the original entries and discard your changes?":
+            "Khôi phục các mục gốc và bỏ mọi thay đổi của bạn?",
+        "Also used on other pages": "Cũng được dùng ở trang khác",
+        "Contains formatting tags": "Có chứa thẻ định dạng",
+        "English": "Tiếng Anh",
+        "Vietnamese": "Tiếng Việt",
+        "Save Changes": "Lưu thay đổi",
+        "Shown on the Events page and the homepage.": "Hiển thị ở trang Sự kiện và trang chủ.",
+        "Shown on the Stories page and the homepage.": "Hiển thị ở trang Câu chuyện và trang chủ.",
+        "Member photos and profiles.": "Ảnh và tiểu sử thành viên.",
+        "Title": "Tiêu đề",
+        "Date": "Ngày",
+        "Summary": "Tóm tắt",
+        "Excerpt": "Trích dẫn",
+        "Image": "Hình ảnh",
+        "Link": "Liên kết",
+        "Biography": "Tiểu sử",
+        "Order": "Thứ tự",
+        "Delete": "Xóa",
+        "Add Entry": "Thêm mục",
+        "New entry": "Mục mới",
+        "Untitled entry": "Mục chưa có tên",
+        "Pick an uploaded image or paste a web address.":
+            "Chọn một ảnh đã tải lên hoặc dán địa chỉ web.",
+        "Replacing an image keeps its filename, so it updates everywhere it appears on the site.":
+            "Khi thay ảnh, tên tệp được giữ nguyên nên ảnh mới sẽ tự cập nhật ở mọi nơi trên trang web.",
+        "Upload an image": "Tải lên một ảnh",
+        "Image file": "Tệp ảnh",
+        "Replace an existing image": "Thay thế một ảnh hiện có",
+        "No — upload as a new image": "Không — tải lên như ảnh mới",
+        "Upload": "Tải lên",
+        "Delete this image? Pages using it will show a broken image.":
+            "Xóa ảnh này? Những trang đang dùng ảnh sẽ bị lỗi hiển thị.",
+
+        # ---- Site editor messages ----
+        "Please sign in to continue.": "Vui lòng đăng nhập để tiếp tục.",
+        "Incorrect username or password.": "Tên đăng nhập hoặc mật khẩu không đúng.",
+        "You have been signed out.": "Bạn đã đăng xuất.",
+        "No editor account is set up yet. See README.md for the setup steps.":
+            "Chưa có tài khoản chỉnh sửa nào. Xem README.md để biết các bước thiết lập.",
+        "Your changes have been saved.": "Các thay đổi đã được lưu.",
+        "No changes to save.": "Không có thay đổi nào để lưu.",
+        "The original wording has been restored.": "Nội dung gốc đã được khôi phục.",
+        "This page was already using the original wording.": "Trang này vốn đã dùng nội dung gốc.",
+        "The original entries have been restored.": "Các mục gốc đã được khôi phục.",
+        "This list was already using the original entries.": "Danh sách này vốn đã dùng các mục gốc.",
+        "That page could not be found.": "Không tìm thấy trang này.",
+        "That content list could not be found.": "Không tìm thấy danh sách nội dung này.",
+        "That image could not be found.": "Không tìm thấy ảnh này.",
+        "Please choose an image file to upload.": "Vui lòng chọn một tệp ảnh để tải lên.",
+        "Only PNG, JPG, WEBP, GIF, and SVG images can be uploaded.":
+            "Chỉ có thể tải lên ảnh định dạng PNG, JPG, WEBP, GIF và SVG.",
     }
 }

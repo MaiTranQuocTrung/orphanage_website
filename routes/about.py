@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template
 
-from data import FOUNDING_COUNCIL, ORG_CHART
+from data import ORG_CHART
+from site_content import get_council
 
 about_bp = Blueprint("about", __name__)
 
@@ -17,7 +18,7 @@ def vision():
 
 @about_bp.route("/council")
 def council():
-    return render_template("about/council.html", council_members=FOUNDING_COUNCIL)
+    return render_template("about/council.html", council_members=get_council())
 
 
 @about_bp.route("/org-chart")

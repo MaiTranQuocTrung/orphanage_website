@@ -1,0 +1,57 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ _("Images") }}{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <h1 class="h3 mb-1">{{ _("Images") }}</h1>
+    <p class="text-muted mb-0">{{ _("Replacing an image keeps its filename, so it updates everywhere it appears on the site.") }}</p>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h2 class="h6 text-uppercase text-muted mb-3">{{ _("Upload an image") }}</h2>
+        <form method="post" enctype="multipart/form-data" class="row g-3 align-items-end">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <div class="col-md-5">
+                <label for="image" class="form-label">{{ _("Image file") }}</label>
+                <input type="file" class="form-control" id="image" name="image" accept=".png,.jpg,.jpeg,.webp,.gif,.svg" required>
+            </div>
+            <div class="col-md-4">
+                <label for="replace" class="form-label">{{ _("Replace an existing image") }}</label>
+                <select class="form-select" id="replace" name="replace">
+                    <option value="">{{ _("No — upload as a new image") }}</option>
+                    {% for image in images %}
+                    <option value="{{ image.name }}">{{ image.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary w-100">{{ _("Upload") }}</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row g-4">
+    {% for image in images %}
+    <div class="col-6 col-md-4 col-xl-3">
+        <div class="card h-100 admin-image-card">
+            <div class="admin-image-thumb">
+                <img src="{{ url_for('static', filename='img/' ~ image.name) }}" alt="{{ image.name }}">
+            </div>
+            <div class="card-body">
+                <p class="small fw-semibold text-truncate mb-1" title="{{ image.name }}">{{ image.name }}</p>
+                <p class="small text-muted mb-2">{{ image.size_kb }} KB</p>
+                <form method="post" action="{{ url_for('admin.delete_image') }}"
+                      onsubmit="return confirm('{{ _("Delete this image? Pages using it will show a broken image.") }}');">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="filename" value="{{ image.name }}">
+                    <button type="submit" class="btn btn-sm btn-outline-danger w-100">{{ _("Delete") }}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
