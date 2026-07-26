@@ -18,7 +18,7 @@ TRANSLATIONS = {
         "Beneficiaries": "Đối tượng hỗ trợ",
         "Intake Process": "Quy trình Tiếp nhận",
         "Governance": "Quản trị",
-        "Shelter Policies": "Quy định Mái ấm",
+        "Shelter Policies": "Quy chế Mái ấm",
         "Operating Charter": "Quy chế Hoạt động",
         "Organization & Staffing": "Tổ chức & Nhân sự",
         "Children's Rights & Care": "Quyền lợi & Chăm sóc Trẻ em",
