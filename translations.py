@@ -93,9 +93,6 @@ TRANSLATIONS = {
             "<strong>06/2026</strong> — Ký hợp đồng lao động với nhân sự chăm nuôi trẻ, cấp dưỡng và bảo vệ",
         "<strong>Jul 2026</strong> — A social work staff member joins the shelter":
             "<strong>07/2026</strong> — Nhân sự phụ trách công tác xã hội gia nhập Mái Ấm",
-        "Formation Principles": "Nguyên tắc hình thành",
-        "Built on Buddhist values of compassion (<em>từ bi</em>) and wisdom (<em>tuệ</em>), our name reflects our commitment to enlightened care for every child.":
-            "Được xây dựng trên các giá trị Phật giáo về lòng <em>từ bi</em> và trí <em>tuệ</em>, tên gọi của chúng tôi thể hiện cam kết chăm sóc bằng sự giác ngộ cho mọi em nhỏ.",
         "Moments at Our Shelter": "Những khoảnh khắc tại Mái ấm",
 
         # ---- Vision & Values ----
