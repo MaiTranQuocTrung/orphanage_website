@@ -65,9 +65,10 @@ TRANSLATIONS = {
         # ---- Home ----
         "Welcome": "Chào mừng",
         "A Home Built on Compassion": "Mái ấm dựng xây từ lòng nhân ái",
-        "Tuệ Quang Children provides safe shelter, education, and emotional support for vulnerable children. We believe every young life holds infinite potential waiting to bloom.":
-            "Mái Ấm Tuệ Quang mang đến nơi trú ẩn an toàn, giáo dục và hỗ trợ tinh thần cho các em nhỏ có hoàn cảnh khó khăn. Chúng tôi tin rằng mỗi sinh linh bé nhỏ đều ẩn chứa tiềm năng vô hạn đang chờ được nở hoa.",
         "Learn Our Story": "Tìm hiểu câu chuyện của chúng tôi",
+        "Stories": "Câu chuyện",
+        "View All Events": "Xem tất cả sự kiện",
+        "View All Stories": "Xem tất cả câu chuyện",
         "Make a Difference Today": "Tạo nên sự khác biệt hôm nay",
         "Your time and generosity can transform a child's life forever.":
             "Thời gian và lòng hảo tâm của bạn có thể thay đổi cuộc đời một em nhỏ mãi mãi.",
