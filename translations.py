@@ -17,7 +17,8 @@ TRANSLATIONS = {
         "Tuệ Quang Children": "Trẻ Em Tuệ Quang",
         "Beneficiaries": "Đối tượng hỗ trợ",
         "Intake Process": "Quy trình Tiếp nhận",
-        "Shelter Policies": "Quy định Mái ấm",
+        "Governance": "Quản trị",
+        "Shelter Policies": "Quy chế Mái ấm",
         "Operating Charter": "Quy chế Hoạt động",
         "Organization & Staffing": "Tổ chức & Nhân sự",
         "Children's Rights & Care": "Quyền lợi & Chăm sóc Trẻ em",
@@ -65,9 +66,10 @@ TRANSLATIONS = {
         # ---- Home ----
         "Welcome": "Chào mừng",
         "A Home Built on Compassion": "Mái ấm dựng xây từ lòng nhân ái",
-        "Tuệ Quang Children provides safe shelter, education, and emotional support for vulnerable children. We believe every young life holds infinite potential waiting to bloom.":
-            "Mái Ấm Tuệ Quang mang đến nơi trú ẩn an toàn, giáo dục và hỗ trợ tinh thần cho các em nhỏ có hoàn cảnh khó khăn. Chúng tôi tin rằng mỗi sinh linh bé nhỏ đều ẩn chứa tiềm năng vô hạn đang chờ được nở hoa.",
         "Learn Our Story": "Tìm hiểu câu chuyện của chúng tôi",
+        "Stories": "Câu chuyện",
+        "View All Events": "Xem tất cả sự kiện",
+        "View All Stories": "Xem tất cả câu chuyện",
         "Make a Difference Today": "Tạo nên sự khác biệt hôm nay",
         "Your time and generosity can transform a child's life forever.":
             "Thời gian và lòng hảo tâm của bạn có thể thay đổi cuộc đời một em nhỏ mãi mãi.",
@@ -92,9 +94,6 @@ TRANSLATIONS = {
             "<strong>06/2026</strong> — Ký hợp đồng lao động với nhân sự chăm nuôi trẻ, cấp dưỡng và bảo vệ",
         "<strong>Jul 2026</strong> — A social work staff member joins the shelter":
             "<strong>07/2026</strong> — Nhân sự phụ trách công tác xã hội gia nhập Mái Ấm",
-        "Formation Principles": "Nguyên tắc hình thành",
-        "Built on Buddhist values of compassion (<em>từ bi</em>) and wisdom (<em>tuệ</em>), our name reflects our commitment to enlightened care for every child.":
-            "Được xây dựng trên các giá trị Phật giáo về lòng <em>từ bi</em> và trí <em>tuệ</em>, tên gọi của chúng tôi thể hiện cam kết chăm sóc bằng sự giác ngộ cho mọi em nhỏ.",
         "Moments at Our Shelter": "Những khoảnh khắc tại Mái ấm",
 
         # ---- Vision & Values ----
@@ -109,12 +108,12 @@ TRANSLATIONS = {
         "Love": "Yêu Thương",
         "Give every child a loving home where they can play, learn, and grow in warmth, care, and sharing.":
             "Mang đến cho mỗi em một ngôi nhà yêu thương, nơi các em được chơi, được học, và lớn lên trong tình cảm ấm áp, quan tâm và chia sẻ.",
-        "Wisdom": "Trí Tuệ",
-        "Let love be guided by wisdom, so that children are nurtured in both material care and the capacity for a happy, meaningful life.":
-            "Để tình yêu thương được soi sáng bởi trí tuệ, giúp các em được nuôi dưỡng cả về vật chất lẫn khả năng sống hạnh phúc và ý nghĩa.",
-        "Safety & Hope": "An toàn & Hy vọng",
-        "Offer children who need protection the chance to grow up in safety, warmth, and hope.":
-            "Mang đến cho những em bé cần được chở che cơ hội lớn lên trong sự an toàn, ấm áp và hy vọng.",
+        "Responsibility": "Trách nhiệm",
+        "Speak and act in line with our commitments, work wholeheartedly, and place the children's best interests above all in everything we do.":
+            "Nói, hành động đúng như cam kết, làm việc tâm huyết và đề cao lợi ích của trẻ trong mọi công việc mình làm.",
+        "Understanding": "Thấu hiểu",
+        "Understand each child's needs and feelings so that they can grow up happy and healthy.":
+            "Thấu hiểu nhu cầu, cảm xúc của trẻ để giúp trẻ phát triển hạnh phúc và lành mạnh.",
 
         # ---- Founding Council ----
         "Click on a council member's photo to learn more about their background and contributions to Tuệ Quang Children.":

@@ -15,16 +15,6 @@ def vision():
     return render_template("about/vision.html")
 
 
-@about_bp.route("/charter")
-def charter():
-    return render_template("about/charter.html")
-
-
-@about_bp.route("/organization")
-def organization():
-    return render_template("about/organization.html")
-
-
 @about_bp.route("/council")
 def council():
     return render_template("about/council.html", council_members=FOUNDING_COUNCIL)

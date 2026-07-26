@@ -61,8 +61,9 @@ python app.py
 | Section | Routes |
 |---------|--------|
 | Home | `/` |
-| About Us | `/about/history`, `/about/vision`, `/about/council`, `/about/org-chart` |
-| Tuệ Quang Children | `/children/beneficiaries`, `/children/intake` |
+| About Us | `/about/history`, `/about/vision` |
+| Tuệ Quang Children | `/children/beneficiaries`, `/children/intake`, `/children/child-rights` |
+| Governance | `/governance/charter`, `/governance/organization` |
 | Shelter Policies | `/policies/rules`, `/policies/visitor`, `/policies/volunteer`, `/policies/child-protection` |
 | Events & Stories | `/events/`, `/events/stories` |
 | Support | `/support/volunteer`, `/support/sponsorship` |
@@ -72,3 +73,4 @@ python app.py
 - Stock images are loaded from Unsplash CDN.
 - Registration forms email submissions to the shelter and show a confirmation flash message.
 - Founding Council photos open a modal with member profiles on click.
+- `/about/council`, `/about/org-chart`, and the Events & Stories pages still work but are not in the top navigation; the homepage links to the events and stories pages.
